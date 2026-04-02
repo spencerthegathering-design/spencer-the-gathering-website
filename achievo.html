@@ -1,61 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievo — Gamify Your Life | Spencer The Gathering</title>
-    <meta name="description" content="Achievo — turn daily tasks into epic quests. XP, streaks, boss battles, and social sharing. Make yourself and the world better, one achievement at a time.">
-    <meta property="og:title" content="Achievo — Gamify Your Life">
-    <meta property="og:description" content="Turn daily tasks into epic quests with XP, streaks, and boss battles.">
-    <meta property="og:image" content="https://spencer-the-gathering.com/spencer-logo.png">
-    <meta property="og:url" content="https://spencer-the-gathering.com/achievo.html">
-    <meta property="og:type" content="website">
+    <title>Achievo • Spencer The Gathering</title>
+    <meta name="description" content="Turn your real life into a social achievement network. Quests, XP, streaks, TikTok-style feed, and the whole squad cheering you on.">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{--neon-blue:#00f3ff;--neon-pink:#ff0099;--neon-gold:#ffd700;--neon-green:#22ff22;--bg-dark:#05081a;--glass-bg:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--text-dim:#8b8ba7}
-        body,a,button{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%2300f3ff'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%2300f3ff'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%2300f3ff' opacity='0.6'/%3E%3C/svg%3E") 16 16,auto}
-        a:hover,button:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16,pointer}
-        html{scroll-behavior:smooth}
-        body{background:var(--bg-dark);color:#fff;font-family:'Space Mono',monospace;overflow-x:hidden;line-height:1.6}
-        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 20%,#1a1430 0%,transparent 50%),radial-gradient(ellipse at 30% 80%,rgba(255,215,0,.04) 0%,transparent 40%),radial-gradient(ellipse at 80% 60%,rgba(249,115,22,.04) 0%,transparent 40%),var(--bg-dark);pointer-events:none;z-index:0}
-        .stars{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 25% 45%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 40% 15%,rgba(255,255,255,.7) 50%,transparent 50%),radial-gradient(1px 1px at 55% 70%,rgba(255,255,255,.4) 50%,transparent 50%),radial-gradient(1px 1px at 70% 35%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 85% 80%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 48% 62%,rgba(255,200,150,.4) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 72% 22%,rgba(200,220,255,.5) 50%,transparent 50%);animation:twinkle 4s ease-in-out infinite alternate}
+        :root{--neon-blue:#00f3ff;--neon-pink:#ff0099;--neon-gold:#ffd700;--neon-purple:#9b5cff;--bg-dark:#05081a}
+        body{background:var(--bg-dark);color:#fff;font-family:'Space Mono',monospace;margin:0;overflow-x:hidden}
+        .stars{position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 25% 45%,rgba(255,255,255,.5) 50%,transparent 50%);animation:twinkle 4s infinite alternate;pointer-events:none;z-index:0}
         @keyframes twinkle{0%{opacity:.6}100%{opacity:1}}
         .content{position:relative;z-index:2}
-        nav{max-width:1200px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
-        .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase}
-        .logo-s{color:var(--neon-blue)}.logo-t{color:rgba(255,255,255,.25);font-weight:400;font-size:.85rem}.logo-g{color:var(--neon-pink)}
-        .back-link{color:var(--text-dim);text-decoration:none;font-size:.8rem;letter-spacing:1px;transition:color .3s}
-        .back-link:hover{color:var(--neon-gold)}
-        .hero{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
-        .game-icon{width:160px;height:160px;border-radius:28px;background:rgba(255,215,0,.06);border:3px solid rgba(255,215,0,.2);display:flex;align-items:center;justify-content:center;font-size:5rem;margin-bottom:2.5rem;box-shadow:0 0 60px rgba(255,215,0,.1);animation:icon-glow 3s ease-in-out infinite}
-        @keyframes icon-glow{0%,100%{box-shadow:0 0 60px rgba(255,215,0,.1)}50%{box-shadow:0 0 80px rgba(255,215,0,.2),0 0 120px rgba(249,115,22,.06)}}
-        .hero h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,5rem);letter-spacing:4px;margin-bottom:1rem;background:linear-gradient(135deg,var(--neon-gold),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .hero-tagline{color:var(--text-dim);font-size:.95rem;max-width:520px;margin-bottom:2rem;line-height:1.8}
-        .status-badge{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;padding:.4rem 1.5rem;border-radius:100px;margin-bottom:2rem;color:var(--neon-gold);border:1px solid rgba(255,215,0,.2);background:rgba(255,215,0,.05)}
-        .notify-form{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
-        .notify-text{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--text-dim);letter-spacing:1px;padding:1rem;border:1px solid rgba(255,215,0,.15);background:rgba(255,215,0,.03);border-radius:8px;max-width:400px;text-align:center;line-height:1.6}
-        .features{max-width:1000px;margin:0 auto;padding:6rem 2rem}
-        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--glass-border);border:1px solid var(--glass-border);border-radius:12px;overflow:hidden}
-        .f-cell{background:var(--bg-dark);padding:2.5rem 1.5rem;text-align:center;transition:background .3s}
-        .f-cell:hover{background:rgba(255,255,255,.02)}
-        .f-cell .icon{font-size:2rem;margin-bottom:1rem}
-        .f-cell h4{font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;margin-bottom:.5rem;text-transform:uppercase;color:var(--neon-gold)}
-        .f-cell p{color:var(--text-dim);font-size:.72rem;line-height:1.6}
-        .vision{max-width:800px;margin:0 auto;padding:0 2rem 6rem;text-align:center}
-        .section-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.5rem;text-align:center;margin-bottom:2rem;letter-spacing:3px;text-transform:uppercase}
-        .vision p{color:var(--text-dim);font-size:.85rem;line-height:1.9;max-width:600px;margin:0 auto}
-        footer{border-top:1px solid var(--glass-border);padding:3rem 2rem;text-align:center}
-        .footer-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1rem}
-        .footer-links a{color:var(--text-dim);text-decoration:none;font-size:.75rem;transition:color .3s}
-        .footer-links a:hover{color:var(--neon-gold)}
-        .footer-copy{font-size:.6rem;color:rgba(255,255,255,.08)}
-        .divider{max-width:1000px;margin:0 auto;height:1px;background:linear-gradient(to right,transparent,var(--glass-border),transparent)}
-        @media(max-width:768px){.hero{min-height:70vh}.game-icon{width:120px;height:120px;font-size:3.5rem}.features-grid{grid-template-columns:repeat(2,1fr)}}
+        nav{max-width:1200px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between}
+        .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px}
+        .logo-s{color:var(--neon-blue)}.logo-t{color:rgba(255,255,255,.25)}.logo-g{color:var(--neon-pink)}
+        .hero{min-height:95vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+        .game-logo{width:220px;height:220px;border-radius:30%;animation:logo-pulse 1.5s infinite}
+        @keyframes logo-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+        h1{font-family:'Orbitron',sans-serif;font-size:clamp(3rem,10vw,6rem);letter-spacing:6px;margin:1rem 0}
+        
+        /* GRADIENT TEXT FIX — exactly what you asked for */
+        .gradient-text {
+            background: linear-gradient(135deg, #9b5cff, #4ad0ff);
+            -webkit-background-clip: text;   /* old Safari/Chrome */
+            background-clip: text;           /* STANDARD property for compatibility */
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        
+        .big-button{padding:1.6rem 4.5rem;background:linear-gradient(135deg,#9b5cff,#4ad0ff);color:#000;font-weight:900;font-size:1.3rem;letter-spacing:4px;border-radius:9999px;box-shadow:0 0 80px rgba(155,92,255,.7);text-decoration:none;margin:1rem}
+        .section-title{color:#ffd700;font-size:1.8rem;margin:3rem 0 1rem;text-align:center}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:4rem}
+        .f-cell{background:rgba(255,255,255,.03);padding:2rem;border-radius:16px;text-align:center;border:1px solid rgba(155,92,255,.2)}
+        .squad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:1rem;margin:2rem 0}
+        .squad-pet{text-align:center}
+        .squad-pet img{width:80px;height:80px;border-radius:50%;border:3px solid #9b5cff;box-shadow:0 0 20px rgba(155,92,255,.5)}
     </style>
 </head>
 <body>
@@ -63,55 +48,77 @@
 <div class="stars"></div>
 <div class="content">
 
+  <!-- NAV (same as your uploaded index.html) -->
   <nav>
     <a href="index.html" class="logo"><span class="logo-s">Spencer</span><span class="logo-t">the</span><span class="logo-g">Gathering</span></a>
-    <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <a href="index.html" style="color:#8b8ba7;text-decoration:none">&larr; Back to Home</a>
   </nav>
 
-  <section class="hero" style="min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-    <div style="font-size:8rem;margin-bottom:2rem">🚀</div>
-    <h1 style="font-family:'Orbitron',sans-serif;font-size:2.8rem;letter-spacing:4px;
-           background:linear-gradient(135deg,#00f3ff,#ff0099);
-           -webkit-background-clip:text;
-           background-clip:text;
-           -webkit-text-fill-color:transparent;
-           color:transparent;">
-  PRIVACY PROTOCOL
-</h1>
-    <p style="max-width:580px;font-size:1.2rem;color:#b4b4cc">Turn your real life into an epic game. Quests. XP. Boss battles. Streaks. Make every day legendary.</p>
-    <div style="margin:3rem 0;padding:1rem 3rem;background:rgba(255,215,0,.1);border:2px solid #ffd700;border-radius:9999px;font-size:1.1rem;color:#ffd700">COMING 2026 — GET READY TO LEVEL UP YOUR LIFE</div>
+  <!-- HERO - using achievologo.jpg you uploaded -->
+  <section class="hero">
+    <img src="achievologo.jpg" alt="Achievo" class="game-logo">
+    <h1 class="gradient-text">ACHIEVO</h1>
+    <p>The Social Achievement Network.<br>
+       <strong>Real life = TikTok + Twitter + RPG quests.</strong><br>
+       Daily streaks, XP, boss battles, guestbook walls, vibe players, and the whole squad cheering you on.<br>
+       <span style="color:#ffd700">Coming 2026 — level up your life with friends!</span></p>
+    
+    <div style="margin:2rem 0">
+      <span style="background:rgba(255,215,0,.15);color:#ffd700;padding:0.6rem 2rem;border-radius:9999px;font-size:0.85rem">COMING 2026 • v1.0</span>
+    </div>
+    
+    <a href="#" onclick="alert('Waitlist coming soon! Join the squad on YouTube @spencer.the.gathering.1')" class="big-button">🚀 JOIN THE WAITLIST — IT’S FREE!</a>
   </section>
 
-  <section style="padding:6rem 2rem;max-width:1000px;margin:0 auto">
-    <h3 style="text-align:center;font-size:1.8rem;color:#ffd700;margin-bottom:3rem">WHAT YOU’LL GET</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem">
-      <div style="background:rgba(255,255,255,.03);padding:2rem;border-radius:16px;border:1px solid rgba(255,215,0,.2);text-align:center">
-        <div style="font-size:3rem;margin-bottom:1rem">🏆</div>
-        <h4 style="color:#ffd700">EPIC QUESTS</h4>
-        <p>Daily tasks become boss fights</p>
-      </div>
-      <div style="background:rgba(255,255,255,.03);padding:2rem;border-radius:16px;border:1px solid rgba(255,215,0,.2);text-align:center">
-        <div style="font-size:3rem;margin-bottom:1rem">🔥</div>
-        <h4 style="color:#ffd700">STREAK POWER</h4>
-        <p>Don’t break the chain — earn massive XP</p>
-      </div>
-      <div style="background:rgba(255,255,255,.03);padding:2rem;border-radius:16px;border:1px solid rgba(255,215,0,.2);text-align:center">
-        <div style="font-size:3rem;margin-bottom:1rem">🌍</div>
-        <h4 style="color:#ffd700">SOCIAL REALM</h4>
-        <p>Share wins with friends and the squad</p>
-      </div>
+  <!-- THE REST OF THE PAGE (same as before but now with fixed background-clip) -->
+  <section style="padding:4rem 2rem;max-width:1200px;margin:0 auto">
+    <h3 class="section-title">YOUR LIFE, NOW A SOCIAL GAME</h3>
+    <div class="features-grid">
+      <div class="f-cell"><div style="font-size:3rem">📸</div><h4>TikTok-style Feed</h4><p>Post photos, videos, quests — dual swipe feed just like your uploaded feed.css</p></div>
+      <div class="f-cell"><div style="font-size:3rem">🏆</div><h4>Epic Quests &amp; XP</h4><p>Daily tasks become boss fights. Streaks give massive XP (see hub.css quests)</p></div>
+      <div class="f-cell"><div style="font-size:3rem">👥</div><h4>Guestbook Wall</h4><p>Friends leave safe messages on your profile wall (exactly like profile.css)</p></div>
+      <div class="f-cell"><div style="font-size:3rem">🎵</div><h4>Vibe Player</h4><p>Share what you’re listening to — Spotify integration built in</p></div>
+      <div class="f-cell"><div style="font-size:3rem">📱</div><h4>Camera &amp; Publish</h4><p>Built-in photo/video capture + publish flow (camera.css + publish.css)</p></div>
+      <div class="f-cell"><div style="font-size:3rem">🔔</div><h4>Inbox + Squad Chat</h4><p>Direct messages and floating bubble stack (inbox.css)</p></div>
+    </div>
+  </section>
+
+  <!-- ONBOARDING TEASER (from your uploaded onboarding.css) -->
+  <section style="padding:4rem 2rem;background:rgba(155,92,255,.03);text-align:center">
+    <h3 class="section-title">FIRST TIME? LET’S MAKE IT YOURS</h3>
+    <p style="color:#ffd700;max-width:600px;margin:0 auto 2rem">Choose your abilities → get perfect quests. Wheelchair user, neurodivergent, chronic fatigue… Achievo is for EVERY body &amp; mind.</p>
+    <div style="background:rgba(14,19,38,.6);padding:2rem;border-radius:20px;max-width:500px;margin:0 auto">
+      <p style="font-size:1.1rem">♿ Wheelchair User 🧠 Neurodivergent 🔋 Chronic Fatigue 👓 Low Vision 🦻 Deaf/HoH 🛡️ Invisible Illness</p>
+    </div>
+  </section>
+
+  <!-- THE SQUAD (all pets you uploaded in the original files) -->
+  <section style="padding:4rem 2rem;text-align:center">
+    <h3 class="section-title">THE SQUAD IS WAITING FOR YOU</h3>
+    <div class="squad-grid">
+      <div class="squad-pet"><img src="stg01.jpg" alt="Chewie"><p>Chewie</p></div>
+      <div class="squad-pet"><img src="stg02.jpg" alt="Siamese"><p>Siamese</p></div>
+      <div class="squad-pet"><img src="stg03.jpg" alt="Saint Bernard"><p>Saint Bernard</p></div>
+      <div class="squad-pet"><img src="stg04.jpg" alt="Black Cat"><p>Black Cat</p></div>
+      <div class="squad-pet"><img src="stg05.jpg" alt="Gray Tabby"><p>Gray Tabby</p></div>
+      <div class="squad-pet"><img src="stg06.jpg" alt="Orange Tabby"><p>Orange Tabby</p></div>
+      <div class="squad-pet"><img src="stg07.jpg" alt="Black Wolf"><p>Black Wolf</p></div>
+      <div class="squad-pet"><img src="stg08.jpg" alt="Black Lab"><p>Black Lab</p></div>
+      <div class="squad-pet"><img src="stg09.jpg" alt="Chihuahua"><p>Chihuahua</p></div>
+      <div class="squad-pet"><img src="stg10.jpg" alt="White Chihuahua"><p>White Chihuahua</p></div>
+      <div class="squad-pet"><img src="stg11.jpg" alt="Tiny Chi"><p>Tiny Chi</p></div>
+      <div class="squad-pet"><img src="stg12.jpg" alt="Tortoiseshell"><p>Tortoiseshell</p></div>
+      <div class="squad-pet"><img src="stg13.jpg" alt="Tuxedo Cat"><p>Tuxedo Cat</p></div>
     </div>
   </section>
 
   <footer style="border-top:1px solid rgba(255,255,255,.08);padding:3rem 2rem;text-align:center">
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="mailto:Spencerthegathering@gmail.com">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Spencer The Gathering • Achievo Coming Soon</div>
+    <a href="privacy.html" style="margin:0 1rem;color:#8b8ba7">Privacy</a>
+    <a href="terms.html" style="margin:0 1rem;color:#8b8ba7">Terms</a>
+    <a href="mailto:Spencerthegathering@gmail.com" style="margin:0 1rem;color:#8b8ba7">Contact</a>
+    <div style="margin-top:2rem;font-size:0.7rem;color:#444">© 2026 Spencer The Gathering • Achievo v1.0 • Built from your new index.html + all CSS files</div>
   </footer>
-</div>
 
+</div>
 </body>
 </html>

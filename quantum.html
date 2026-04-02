@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Button • Spencer The Gathering</title>
-    <meta name="description" content="The most addictive tap game ever. VS battles, power-ups, daily spins — coming soon!">
+    <meta name="description" content="The most addictive tap game on the planet. VS battles, power-ups, daily spins — coming soon!">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -24,14 +24,23 @@
         .game-logo{width:220px;height:220px;border-radius:50%;animation:logo-pulse 1.5s infinite}
         @keyframes logo-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
         h1{font-family:'Orbitron',sans-serif;font-size:clamp(3rem,10vw,6rem);letter-spacing:6px;margin:1rem 0}
-        .hero p{color:#ffd700;font-size:1.3rem;max-width:620px;line-height:1.4}
+        
+        /* GRADIENT TEXT FIX — exactly what you asked for on Quantum */
+        .gradient-text {
+            background: linear-gradient(135deg, #00f3ff, #ff0099);
+            -webkit-background-clip: text;   /* old Safari/Chrome */
+            background-clip: text;           /* STANDARD property for compatibility */
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        
         .big-button{padding:1.6rem 4.5rem;background:linear-gradient(135deg,#00f3ff,#ff0099);color:#000;font-weight:900;font-size:1.3rem;letter-spacing:4px;border-radius:9999px;box-shadow:0 0 80px rgba(0,243,255,.7);text-decoration:none;margin:1rem}
         .section-title{color:#ffd700;font-size:1.8rem;margin:3rem 0 1rem;text-align:center}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:4rem}
+        .f-cell{background:rgba(255,255,255,.03);padding:2rem;border-radius:16px;text-align:center;border:1px solid rgba(0,243,255,.2)}
         .squad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:1rem;margin:2rem 0}
         .squad-pet{text-align:center}
         .squad-pet img{width:80px;height:80px;border-radius:50%;border:3px solid #00f3ff;box-shadow:0 0 20px rgba(0,243,255,.5)}
-        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:4rem}
-        .f-cell{background:rgba(255,255,255,.03);padding:2rem;border-radius:16px;text-align:center;border:1px solid rgba(0,243,255,.2)}
     </style>
 </head>
 <body>
@@ -39,16 +48,16 @@
 <div class="stars"></div>
 <div class="content">
 
-  <!-- NAV (same as your index.html) -->
+  <!-- NAV (same as before) -->
   <nav>
     <a href="index.html" class="logo"><span class="logo-s">Spencer</span><span class="logo-t">the</span><span class="logo-g">Gathering</span></a>
     <a href="index.html" style="color:#8b8ba7;text-decoration:none">&larr; Back to Home</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (now with fixed background-clip) -->
   <section class="hero">
-    <img src="quantum-logo.jpg" alt="Quantum Button" class="game-logo"> <!-- your uploaded quantum-logo.jpg -->
-    <h1><span style="color:#fff">QUANTUM</span> <span style="background:linear-gradient(135deg,#00f3ff,#ff0099);-webkit-background-clip:text;-webkit-text-fill-color:transparent">BUTTON</span></h1>
+    <img src="quantum-logo.jpg" alt="Quantum Button" class="game-logo">
+    <h1><span style="color:#fff">QUANTUM</span> <span class="gradient-text">BUTTON</span></h1>
     <p>The most addictive tap game on the planet.<br>
        <strong>VS MODE • POWER-UPS • DAILY SPINS • MYTHIC SKINS</strong><br>
        <span style="color:#ffd700">Beta launching VERY soon — get ready to tap with the whole squad!</span></p>
@@ -60,7 +69,7 @@
     <a href="https://quantum-button.web.app" class="big-button">🔥 JOIN THE WAITLIST — IT’S FREE!</a>
   </section>
 
-  <!-- GAME INFO (real hype + screenshots you uploaded) -->
+  <!-- GAME INFO (unchanged) -->
   <section style="padding:4rem 2rem;max-width:1200px;margin:0 auto">
     <h3 class="section-title">WHY IT’S IMPOSSIBLE TO PUT DOWN</h3>
     <div class="features-grid">
@@ -70,10 +79,9 @@
       <div class="f-cell"><div style="font-size:3rem">🎰</div><h4>Daily Spin</h4><p>Free crates, bombs, duels, shields — every single day</p></div>
     </div>
 
-    <!-- Screenshots you uploaded -->
     <h3 class="section-title" style="margin-top:4rem">Sneak Peek Inside the Game</h3>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <img src="screenshot1.png" alt="Main Menu" style="max-height:420px;border:3px solid #00f3ff;border-radius:12px"> <!-- your uploaded screenshot1.png -->
+      <img src="screenshot1.png" alt="Main Menu" style="max-height:420px;border:3px solid #00f3ff;border-radius:12px">
       <img src="screenshot2.png" alt="Gameplay" style="max-height:420px;border:3px solid #ff0099;border-radius:12px">
       <img src="screenshot3.png" alt="Game Over" style="max-height:420px;border:3px solid #ffd700;border-radius:12px">
       <img src="screenshot4.png" alt="Daily Spin" style="max-height:420px;border:3px solid #00f3ff;border-radius:12px">
@@ -81,7 +89,7 @@
     </div>
   </section>
 
-  <!-- THE SQUAD — exactly what you asked for (all pets you uploaded) -->
+  <!-- THE SQUAD (all your pets) -->
   <section style="padding:4rem 2rem;background:rgba(0,243,255,.03);text-align:center">
     <h3 class="section-title">MEET THE SQUAD</h3>
     <p style="color:#ffd700">These legends are cheering you on in every battle</p>
