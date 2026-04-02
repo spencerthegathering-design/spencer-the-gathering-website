@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spencer The Gathering | Apps & Entertainment</title>
+    <meta name="description" content="Home of Quantum Button and Achievo. Building the future of fun, one fry at a time.">
+    <meta name="author" content="Spencerthegathering">
+    <meta property="og:title" content="Spencer The Gathering — Apps & Entertainment">
+    <meta property="og:description" content="Home of Quantum Button and Achievo. Building the future of fun.">
+    <meta property="og:image" content="https://spencer-the-gathering.com/spencer-logo.png">
+    <meta property="og:url" content="https://spencer-the-gathering.com">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--neon-blue:#00f3ff;--neon-pink:#ff0099;--neon-gold:#ffd700;--neon-green:#22ff22;--neon-orange:#f97316;--bg-dark:#05081a;--glass-bg:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--text-dim:#8b8ba7;--text-body:#c4c4d4}
+
+        /* ===== CUSTOM CURSOR ===== */
+        body,a,button{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%2300f3ff'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%2300f3ff'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%2300f3ff' opacity='0.6'/%3E%3C/svg%3E") 16 16,auto}
+        a:hover,button:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16,pointer}
+
+        /* ===== BODY + STARFIELD ===== */
+        html{scroll-behavior:smooth}
+        body{background:var(--bg-dark);color:#fff;font-family:'Space Mono',monospace;overflow-x:hidden;line-height:1.6}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 30%,#111640 0%,transparent 55%),radial-gradient(ellipse at 80% 70%,rgba(60,30,20,0.3) 0%,transparent 40%),radial-gradient(ellipse at 20% 80%,rgba(20,30,60,0.4) 0%,transparent 40%),var(--bg-dark);pointer-events:none;z-index:0}
+        .stars,.stars-2{position:fixed;inset:0;pointer-events:none;z-index:0}
+        .stars{background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 25% 45%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 40% 15%,rgba(255,255,255,.7) 50%,transparent 50%),radial-gradient(1px 1px at 55% 70%,rgba(255,255,255,.4) 50%,transparent 50%),radial-gradient(1px 1px at 70% 35%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 85% 80%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 15% 65%,rgba(255,255,255,.3) 50%,transparent 50%),radial-gradient(1px 1px at 50% 50%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 90% 10%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 5% 90%,rgba(255,255,255,.4) 50%,transparent 50%),radial-gradient(1px 1px at 35% 85%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 65% 5%,rgba(255,255,255,.6) 50%,transparent 50%);animation:twinkle 4s ease-in-out infinite alternate}
+        .stars-2{background-image:radial-gradient(1.5px 1.5px at 18% 38%,rgba(255,180,100,.5) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 48% 62%,rgba(255,200,150,.4) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 72% 22%,rgba(200,220,255,.5) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 88% 75%,rgba(255,180,120,.3) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 32% 92%,rgba(220,200,255,.4) 50%,transparent 50%),radial-gradient(2px 2px at 8% 52%,rgba(255,200,100,.3) 50%,transparent 50%);animation:twinkle 6s ease-in-out 1s infinite alternate}
+        @keyframes twinkle{0%{opacity:.6}100%{opacity:1}}
+        .noise-overlay{position:fixed;inset:0;opacity:.012;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:1}
+        .content{position:relative;z-index:2}
+        .scanline{position:fixed;top:0;left:0;width:100%;height:2px;background:linear-gradient(to right,transparent,var(--neon-blue),transparent);opacity:.06;animation:scanline-move 10s linear infinite;pointer-events:none;z-index:999}
+        @keyframes scanline-move{0%{top:-2px}100%{top:100vh}}
+
+        /* ===== NAV ===== */
+        nav{width:100%;max-width:1200px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase}
+        .logo-spencer{color:var(--neon-blue)}.logo-the{color:rgba(255,255,255,.25);font-weight:400;font-size:.85rem}.logo-gathering{color:var(--neon-pink)}
+        .nav-links{display:flex;gap:2rem;align-items:center}
+        .nav-links a{color:var(--text-dim);text-decoration:none;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;transition:all .3s;position:relative}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--neon-blue);box-shadow:0 0 8px var(--neon-blue);transition:width .3s}
+        .nav-links a:hover{color:var(--neon-blue)}.nav-links a:hover::after{width:100%}
+
+        /* ===== HERO ===== */
+        .hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
+
+        /* Floating dog logo with eye blinks */
+        .hero-logo-wrap{position:relative;margin-bottom:2.5rem;animation:float 5s ease-in-out infinite;display:inline-block}
+        .hero-logo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.1);box-shadow:0 0 50px rgba(0,243,255,.15),0 0 100px rgba(0,243,255,.05);transition:box-shadow .5s;display:block}
+        .hero-logo-wrap:hover .hero-logo{box-shadow:0 0 60px rgba(255,0,153,.25),0 0 120px rgba(255,0,153,.08)}
+
+        /*
+         * DOG EYE BLINK OVERLAYS
+         * ----------------------
+         * The 200x200 circle shows: dog head top half, fries bottom half.
+         * Dog's LEFT eye  = amber/orange iris, our left  side of image
+         * Dog's RIGHT eye = green VR visor,    our right side of image
+         *
+         * The blinks are small dark ovals that briefly cover each iris.
+         * Color #1a1020 matches the dark fur around the eye sockets.
+         */
+        .eye-blink-l, .eye-blink-r {
+            position: absolute;
+            background: #1a1020;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 5;
+            animation: dog-blink 4.5s ease-in-out infinite;
+        }
+
+        /* LEFT eye — the visible amber/orange iris */
+        .eye-blink-l {
+            width: 20px;
+            height: 12px;
+            top: 24%;
+            left: 31%;
+        }
+
+        /* RIGHT eye — the green VR visor eye */
+        .eye-blink-r {
+            width: 18px;
+            height: 11px;
+            top: 23%;
+            left: 54%;
+            animation-delay: 0.05s;
+        }
+
+        @keyframes dog-blink {
+            0%, 90%, 100% { opacity: 0; transform: scaleY(0); }
+            93%, 97% { opacity: 1; transform: scaleY(1); }
+        }
+
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+        .hero h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.15;margin-bottom:1.5rem}
+        .hero h1 .line1{display:block;color:rgba(255,255,255,.9)}
+        .hero h1 .line2{display:block;background:linear-gradient(135deg,var(--neon-orange),var(--neon-gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{color:var(--text-dim);font-size:.9rem;max-width:520px;margin-bottom:2.5rem;line-height:1.8}
+        .hero-cta{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2.5rem;background:transparent;border:2px solid var(--neon-blue);color:var(--neon-blue);font-family:'Orbitron',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;clip-path:polygon(8% 0,100% 0,100% 75%,92% 100%,0 100%,0 25%);transition:all .2s;box-shadow:0 0 20px rgba(0,243,255,.12)}
+        .hero-cta:hover{background:var(--neon-blue);color:#000;box-shadow:0 0 40px rgba(0,243,255,.3)}
+        .scroll-hint{position:absolute;bottom:2rem;animation:scroll-bob 2s ease-in-out infinite;color:rgba(255,255,255,.12);font-size:.65rem;letter-spacing:4px;text-transform:uppercase}
+        .scroll-hint::after{content:'';display:block;width:1px;height:25px;background:linear-gradient(to bottom,rgba(0,243,255,.2),transparent);margin:.5rem auto 0}
+        @keyframes scroll-bob{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(8px);opacity:.8}}
+
+        /* ===== SECTION TITLES ===== */
+        .section-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.8rem;text-align:center;margin-bottom:.75rem;letter-spacing:2px}
+        .section-subtitle{text-align:center;color:var(--text-dim);font-size:.8rem;margin-bottom:3.5rem;letter-spacing:1px}
+
+        /* ===== PROJECTS ===== */
+        .projects{max-width:1200px;margin:0 auto;padding:6rem 2rem}
+        .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+        .project-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:16px;padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:all .4s;position:relative;overflow:hidden}
+        .project-card::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 50%,rgba(0,243,255,.03));pointer-events:none}
+        .project-card:hover{border-color:var(--neon-blue);box-shadow:0 0 40px rgba(0,243,255,.08);transform:translateY(-4px)}
+        .project-card.card-achievo:hover{border-color:var(--neon-gold);box-shadow:0 0 40px rgba(255,215,0,.08)}
+        .project-card.card-achievo::before{background:linear-gradient(160deg,transparent 50%,rgba(255,215,0,.03))}
+        .project-status{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:100px;margin-bottom:1.25rem}
+        .status-soon{color:var(--neon-orange);border:1px solid rgba(249,115,22,.25);background:rgba(249,115,22,.06)}
+        .project-icon{width:100px;height:100px;border-radius:22px;margin-bottom:1.5rem;object-fit:cover;border:2px solid rgba(255,255,255,.08)}
+        .project-icon-placeholder{width:100px;height:100px;border-radius:22px;margin-bottom:1.5rem;background:rgba(255,215,0,.06);border:2px solid rgba(255,215,0,.12);display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+        .project-card h3{font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:.6rem;letter-spacing:1px}
+        .project-card>p{color:var(--text-dim);font-size:.82rem;line-height:1.7;margin-bottom:1.5rem}
+        .card-features{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem}
+        .chip{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:1px;padding:.35rem .85rem;border-radius:100px;text-transform:uppercase;border:1px solid rgba(0,243,255,.15);color:rgba(0,243,255,.7);background:rgba(0,243,255,.04)}
+        .card-achievo .chip{border-color:rgba(255,215,0,.15);color:rgba(255,215,0,.7);background:rgba(255,215,0,.04)}
+        .btn-view{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.8rem;border:1px solid var(--neon-blue);color:var(--neon-blue);background:transparent;font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .2s;margin-top:auto}
+        .btn-view:hover{background:var(--neon-blue);color:#000;box-shadow:0 0 20px rgba(0,243,255,.25)}
+        .btn-view.btn-gold{border-color:var(--neon-gold);color:var(--neon-gold)}
+        .btn-view.btn-gold:hover{background:var(--neon-gold);color:#000;box-shadow:0 0 20px rgba(255,215,0,.25)}
+
+        /* ===== TEAM ===== */
+        .team{max-width:1200px;margin:0 auto;padding:6rem 2rem}
+        .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:1.5rem}
+        .team-member{text-align:center;transition:transform .3s}.team-member:hover{transform:translateY(-5px)}
+        .team-avatar{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.06);margin:0 auto .65rem;display:block;transition:all .3s;filter:saturate(.6) brightness(.85)}
+        .team-member:hover .team-avatar{filter:saturate(1) brightness(1);border-color:var(--neon-pink);box-shadow:0 0 20px rgba(255,0,153,.25)}
+        .team-member:nth-child(3n+1):hover .team-avatar{border-color:var(--neon-blue);box-shadow:0 0 20px rgba(0,243,255,.25)}
+        .team-member:nth-child(3n+2):hover .team-avatar{border-color:var(--neon-gold);box-shadow:0 0 20px rgba(255,215,0,.25)}
+        .team-name{font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:1px}
+        .team-role{font-size:.6rem;color:var(--text-dim);margin-top:.15rem}
+
+        /* ===== YOUTUBE SECTION ===== */
+        .youtube-section{max-width:900px;margin:0 auto;padding:6rem 2rem;display:flex;align-items:center;gap:3rem}
+        .yt-image-wrap{flex-shrink:0;position:relative}
+        .yt-image{width:320px;height:240px;object-fit:cover;border-radius:16px;border:2px solid rgba(255,255,255,.08);transition:all .4s;filter:saturate(.8)}
+        .yt-image-wrap:hover .yt-image{border-color:#ff0000;box-shadow:0 0 40px rgba(255,0,0,.15);filter:saturate(1);transform:rotate(-1deg) scale(1.02)}
+        .yt-badge{position:absolute;top:12px;right:12px;font-family:'Orbitron',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:2px;padding:.3rem .8rem;background:#ff0000;color:#fff;border-radius:4px;text-transform:uppercase}
+        .yt-content{flex:1}
+        .yt-content h3{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.4rem;margin-bottom:.75rem;letter-spacing:2px}
+        .yt-content p{color:var(--text-dim);font-size:.82rem;line-height:1.8;margin-bottom:1.5rem}
+        .btn-youtube{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 2rem;background:#ff0000;color:#fff;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all .2s;border:none}
+        .btn-youtube:hover{background:#cc0000;box-shadow:0 0 30px rgba(255,0,0,.25);transform:translateY(-2px)}
+        .btn-youtube svg{width:18px;height:18px;fill:currentColor}
+
+        /* ===== FOOTER ===== */
+        footer{border-top:1px solid var(--glass-border);padding:3rem 2rem;text-align:center}
+        .footer-social{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1.5rem}
+        .footer-social a{color:var(--text-dim);transition:all .3s}.footer-social a:hover{color:var(--neon-blue)}
+        .footer-social svg{width:22px;height:22px}
+        .footer-brand{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:4px;color:rgba(255,255,255,.1);margin-bottom:1.25rem;text-transform:uppercase}
+        .footer-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.25rem}
+        .footer-links a{color:var(--text-dim);text-decoration:none;font-size:.7rem;letter-spacing:1px;transition:color .3s}
+        .footer-links a:hover{color:var(--neon-blue)}
+        .footer-copy{font-size:.6rem;color:rgba(255,255,255,.08);letter-spacing:1px}
+
+        /* ===== UTILITIES ===== */
+        .divider{max-width:1200px;margin:0 auto;height:1px;background:linear-gradient(to right,transparent,var(--glass-border),transparent)}
+        .fade-in{opacity:0;transform:translateY(20px);animation:fade-up .6s ease-out forwards;animation-play-state:paused}
+        .fade-in:nth-child(1){animation-delay:.1s}.fade-in:nth-child(2){animation-delay:.2s}
+        @keyframes fade-up{to{opacity:1;transform:translateY(0)}}
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px){
+            nav{flex-direction:column;gap:1rem}
+            .nav-links{gap:1.5rem}
+            .hero{min-height:80vh;padding:2rem 1.5rem}
+            .hero-logo{width:150px;height:150px}
+            .eye-blink-l{width:15px;height:9px}
+            .eye-blink-r{width:14px;height:8px}
+            .project-grid{grid-template-columns:1fr}
+            .team-grid{grid-template-columns:repeat(3,1fr);gap:1rem}
+            .team-avatar{width:65px;height:65px}
+            .youtube-section{flex-direction:column;text-align:center;gap:2rem;padding:4rem 2rem}
+            .yt-image{width:100%;max-width:350px;height:auto;aspect-ratio:4/3}
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars-2"></div>
+    <div class="noise-overlay"></div>
+    <div class="scanline"></div>
+
+    <div class="content">
+
+        <!-- NAV -->
+        <nav>
+            <a href="index.html" class="logo"><span class="logo-spencer">Spencer</span><span class="logo-the">the</span><span class="logo-gathering">Gathering</span></a>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#team">Team</a>
+                <a href="https://www.youtube.com/@spencer.the.gathering.1" target="_blank" rel="noopener">YouTube</a>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-logo-wrap">
+                <img src="spencer-logo.png" alt="Spencer The Gathering" class="hero-logo">
+                <div class="eye-blink-l"></div>
+                <div class="eye-blink-r"></div>
+            </div>
+            <h1><span class="line1">Welcome to the</span><span class="line2">Gathering</span></h1>
+            <p class="hero-sub">Building the future of fun, one fry at a time. Games, apps, and digital entertainment for the next generation.</p>
+            <a href="#projects" class="hero-cta"><span>&#9654;</span> See Our Projects</a>
+            <div class="scroll-hint">Scroll</div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">Our Projects</h2>
+            <p class="section-subtitle">Games and apps from the Gathering</p>
+            <div class="project-grid">
+                <div class="project-card fade-in">
+                    <span class="project-status status-soon">Coming Soon</span>
+                    <img src="quantum-logo.jpg" alt="Quantum Button" class="project-icon">
+                    <h3>Quantum Button</h3>
+                    <p>The addictive tap game with AI difficulty, global leaderboards, robot skins, combo chains, and TikTok-worthy replays. Free to play. Impossible to master.</p>
+                    <div class="card-features"><span class="chip">Leaderboards</span><span class="chip">Robot Skins</span><span class="chip">AI Difficulty</span><span class="chip">Viral Clips</span><span class="chip">Pro Mode</span></div>
+                    <a href="quantum.html" class="btn-view">Learn More &rarr;</a>
+                </div>
+                <div class="project-card card-achievo fade-in">
+                    <span class="project-status status-soon">Coming 2026</span>
+                    <div class="project-icon-placeholder">&#128640;</div>
+                    <h3>Achievo</h3>
+                    <p>Gamify your life. Turn daily tasks into epic quests with XP, streaks, boss battles, and a progression system that makes productivity addictive.</p>
+                    <div class="card-features"><span class="chip">Gamify Your Life</span><span class="chip">Leaderboards</span><span class="chip">Social Sharing</span><span class="chip">Self Improvement</span></div>
+                    <a href="achievo.html" class="btn-view btn-gold">Learn More &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- TEAM -->
+        <section id="team" class="team">
+            <h2 class="section-title">The Squad</h2>
+            <p class="section-subtitle">The founding members of the Gathering</p>
+            <div class="team-grid">
+                <div class="team-member fade-in"><img src="stg01.jpg" alt="Chewie" class="team-avatar"><div class="team-name">Chewie</div><div class="team-role">The Original</div></div>
+                <div class="team-member fade-in"><img src="stg02.jpg" alt="Leo" class="team-avatar"><div class="team-name">Leo</div><div class="team-role">Commander</div></div>
+                <div class="team-member fade-in"><img src="stg03.jpg" alt="Obi" class="team-avatar"><div class="team-name">Obi</div><div class="team-role">Guardian</div></div>
+                <div class="team-member fade-in"><img src="stg04.jpg" alt="Lilly" class="team-avatar"><div class="team-name">Lilly</div><div class="team-role">Strategist</div></div>
+                <div class="team-member fade-in"><img src="stg05.jpg" alt="Grey" class="team-avatar"><div class="team-name">Grey</div><div class="team-role">Shadow</div></div>
+                <div class="team-member fade-in"><img src="stg06.jpg" alt="Lightning" class="team-avatar"><div class="team-name">Lightning</div><div class="team-role">Speedster</div></div>
+                <div class="team-member fade-in"><img src="stg07.jpg" alt="Phasma" class="team-avatar"><div class="team-name">Phasma</div><div class="team-role">Phantom</div></div>
+                <div class="team-member fade-in"><img src="stg08.jpg" alt="Zed" class="team-avatar"><div class="team-name">Zed</div><div class="team-role">Enforcer</div></div>
+                <div class="team-member fade-in"><img src="stg09.jpg" alt="Sophie" class="team-avatar"><div class="team-name">Sophie</div><div class="team-role">Scout</div></div>
+                <div class="team-member fade-in"><img src="stg10.jpg" alt="Ruby" class="team-avatar"><div class="team-name">Ruby</div><div class="team-role">Mystic</div></div>
+                <div class="team-member fade-in"><img src="stg11.jpg" alt="Teddy" class="team-avatar"><div class="team-name">Teddy</div><div class="team-role">Tank</div></div>
+                <div class="team-member fade-in"><img src="stg12.jpg" alt="Porsha" class="team-avatar"><div class="team-name">Porsha</div><div class="team-role">Pilot</div></div>
+                <div class="team-member fade-in"><img src="stg13.jpg" alt="Padme" class="team-avatar"><div class="team-name">Padme</div><div class="team-role">Diplomat</div></div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- YOUTUBE SECTION -->
+        <section class="youtube-section fade-in">
+            <div class="yt-image-wrap">
+                <img src="obi-youtube.jpg" alt="Obi managing the YouTube channel" class="yt-image">
+                <div class="yt-badge">On Air</div>
+            </div>
+            <div class="yt-content">
+                <h3>Follow the Journey</h3>
+                <p>Behind-the-scenes dev logs, gameplay reveals, and Obi occasionally hijacking the production setup. Subscribe to be the first to know when our games launch.</p>
+                <a href="https://www.youtube.com/@spencer.the.gathering.1" target="_blank" rel="noopener" class="btn-youtube">
+                    <svg viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    Subscribe
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@spencer.the.gathering.1" target="_blank" rel="noopener" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+                <a href="mailto:Spencerthegathering@gmail.com" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+            </div>
+            <div class="footer-brand">Spencer the Gathering</div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:Spencerthegathering@gmail.com">Contact</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Spencer The Gathering. All rights reserved.</div>
+        </footer>
+
+    </div>
+
+    <script>
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+    </script>
+</body>
+</html>
