@@ -117,18 +117,28 @@
         .footer-links a:hover{color:var(--neon-blue)}
         .footer-copy{font-size:.6rem;color:rgba(255,255,255,.08);letter-spacing:1px}
 
-        .divider{max-width:1200px;margin:0 auto;height:1px;background:linear-gradient(to right,transparent,var(--glass-border),transparent)}
-        @media(max-width:768px){
-            nav{flex-direction:column;gap:1rem}
-            .nav-links{gap:1.5rem}
-            .hero{min-height:80vh;padding:2rem 1.5rem}
-            .hero-logo{width:150px;height:150px}
-            .eye-blink-l{width:15px;height:9px}
-            .eye-blink-r{width:14px;height:8px}
-            .project-grid{grid-template-columns:1fr}
-            .team-grid{grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:1rem}
-            .youtube-section{flex-direction:column;text-align:center;gap:2rem;padding:4rem 2rem}
-            .yt-image{width:100%;max-width:350px;height:auto;aspect-ratio:4/3}
+.divider{max-width:1200px;margin:0 auto;height:1px;background:linear-gradient(to right,transparent,var(--glass-border),transparent)}
+        
+        /* SEXIER MOBILE + PC BOOST — makes everything pop on phones and computers */
+        @media (max-width: 768px) {
+            .hero { min-height: 85vh; padding: 1.5rem; }
+            .hero-logo { width: 180px; height: 180px; }
+            .project-card { padding: 1.8rem 1.2rem; }
+            .big-button { padding: 1.2rem 3rem; font-size: 1.1rem; }
+        }
+        .project-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 0 60px rgba(0,243,255,.4);
+        }
+        .btn-view {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hero-cta {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0,243,255,.12); }
+            50% { box-shadow: 0 0 50px rgba(0,243,255,.6); }
         }
     </style>
 </head>
@@ -169,17 +179,20 @@
     <p class="section-subtitle">Live now or coming soon — all futuristic and addictive</p>
     <div class="project-grid">
       <div class="project-card" style="border-color:#00f3ff;box-shadow:0 0 30px rgba(0,243,255,.2)">
-        <span class="project-status" style="background:rgba(0,243,255,.1);color:#00f3ff">COMMING SOON • v2.0</span>
+        <span class="project-status" style="background:rgba(0,243,255,.1);color:#00f3ff">COMING SOON • v2.0</span>
         <img src="quantum-logo.jpg" alt="Quantum Button" class="project-icon">
         <h3 style="color:#fff">QUANTUM BUTTON</h3>
-        <p>The ultimate tap battle arena. Solo or 1v1 VS Mode with room codes, Fury, Barrier & Shadow Clone items. Impossible to put down.</p>
+        <p>The most addictive tap game on the planet.<br>
+           <strong>PRIVATE 1v1 PvP with LIVE VIDEO FEED of your opponent • New Power Items • Daily Spin Crates • Mythic Skins • Squad cheers</strong><br>
+           Latest version from the projects folder — tap face-to-face with friends (P2P secure). Beta launching VERY soon!</p>
         <div class="card-features">
-          <span class="chip">VS MODE LIVE</span>
-          <span class="chip">POWER ITEMS</span>
-          <span class="chip">GLOBAL LEADERBOARDS</span>
+          <span class="chip">PRIVATE PvP + LIVE VIDEO</span>
+          <span class="chip">NEW POWER ITEMS</span>
+          <span class="chip">DAILY SPIN CRATES</span>
           <span class="chip">MYTHIC SKINS</span>
+          <span class="chip">SQUAD CHEERS</span>
         </div>
-        <a href="quantum.html" class="btn-view" style="border-color:#00f3ff;color:#00f3ff">ENTER THE ARENA →</a>
+        <a href="quantum.html" class="btn-view" style="border-color:#00f3ff;color:#00f3ff">SEE THE LATEST BUILD →</a>
       </div>
 
       <div class="project-card card-achievo">
