@@ -1,49 +1,181 @@
-<!-- START OF WAITLIST.HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the Quanmtum Button Waitlist • Spencer The Gathering</title>
+    <title>Join The Quantum Button Waitlist • Spencer The Gathering</title>
+    <meta name="description" content="Be first into the Quantum Button closed beta. Private 1v1 PvP with live video. Power items. Daily crates. Mythic skins.">
+    <meta name="theme-color" content="#05081a">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body,a,button{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%2300f3ff'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%2300f3ff'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%2300f3ff' opacity='0.6'/%3E%3C/svg%3E") 16 16,auto}
-a:hover,button:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16,pointer}
-        :root{--neon-purple:#9b5cff;--bg-dark:#05081a}
-        body{background:var(--bg-dark);color:#fff;font-family:'Space Mono',monospace;margin:0;padding:0;display:flex;align-items:center;justify-content:center;min-height:100vh}
-        .stars{position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.6) 50%,transparent 50%);animation:twinkle 4s infinite alternate;pointer-events:none;z-index:0}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--neon-blue:#00f3ff;--neon-pink:#ff0099;--neon-gold:#ffd700;--bg-dark:#05081a;--glass-bg:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--glass-border-hi:rgba(255,255,255,0.18);--text-dim:#8b8ba7;--text-body:#c4c4d4}
+        body,a,button{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%2300f3ff'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%2300f3ff'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%2300f3ff' opacity='0.6'/%3E%3C/svg%3E") 16 16,auto}
+        a:hover,button:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16,pointer}
+
+        body{background:var(--bg-dark);color:#fff;font-family:'Space Mono',monospace;min-height:100vh;display:flex;flex-direction:column;line-height:1.6}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 30%,#111640 0%,transparent 55%),radial-gradient(ellipse at 80% 70%,rgba(60,30,20,0.3) 0%,transparent 40%),radial-gradient(ellipse at 20% 80%,rgba(20,30,60,0.4) 0%,transparent 40%),var(--bg-dark);pointer-events:none;z-index:0}
+        .stars{position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 25% 45%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 40% 15%,rgba(255,255,255,.7) 50%,transparent 50%),radial-gradient(1px 1px at 55% 70%,rgba(255,255,255,.4) 50%,transparent 50%),radial-gradient(1px 1px at 70% 35%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 85% 80%,rgba(255,255,255,.5) 50%,transparent 50%);animation:twinkle 4s infinite alternate;pointer-events:none;z-index:0}
         @keyframes twinkle{0%{opacity:.6}100%{opacity:1}}
-        .content{position:relative;z-index:2;max-width:500px;margin:2rem;padding:3rem 2rem;background:rgba(255,255,255,.03);border-radius:20px;border:1px solid rgba(155,92,255,.3);text-align:center}
-        h1{font-family:'Orbitron',sans-serif;font-size:3rem;letter-spacing:4px;margin-bottom:1rem}
-        .gradient-text{background:linear-gradient(135deg,#9b5cff,#4ad0ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-        form{display:flex;flex-direction:column;gap:1rem}
-        input, textarea{width:100%;padding:1rem;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(155,92,255,.3);color:#fff;font-size:1rem}
-        button{padding:1.2rem;background:linear-gradient(135deg,#9b5cff,#4ad0ff);color:#000;font-weight:900;font-size:1.3rem;border-radius:9999px;border:none;cursor:pointer}
-        .success{display:none;margin-top:1rem;color:#ffd700;font-weight:700}
+        .content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column}
+
+        /* NAV */
+        nav-wrap{display:block}
+        .nav-wrap{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(5,8,26,.6);border-bottom:1px solid var(--glass-border)}
+        nav{max-width:1200px;margin:0 auto;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+        .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase}
+        .logo-s{color:var(--neon-blue)}.logo-t{color:rgba(255,255,255,.25);font-weight:400;font-size:.85rem}.logo-g{color:var(--neon-pink)}
+        .back-link{color:var(--text-dim);text-decoration:none;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s;padding:.5rem .8rem;border-radius:6px;border:1px solid var(--glass-border-hi)}
+        .back-link:hover{color:var(--neon-blue);border-color:var(--neon-blue)}
+
+        /* MAIN */
+        main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem}
+        .wrap{max-width:560px;width:100%;background:linear-gradient(160deg,var(--glass-bg),rgba(0,243,255,.04));border:1px solid var(--glass-border-hi);border-radius:24px;padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+        .wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 0%,rgba(0,243,255,.12),transparent 50%),radial-gradient(circle at 80% 100%,rgba(255,0,153,.1),transparent 50%);pointer-events:none}
+        .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--neon-blue);background:rgba(0,243,255,.08);border:1px solid rgba(0,243,255,.3);padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem;position:relative}
+        .eyebrow .pulse{width:6px;height:6px;border-radius:50%;background:var(--neon-blue);box-shadow:0 0 10px var(--neon-blue);animation:pulse 1.6s ease-in-out infinite}
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+        h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1.8rem,5vw,2.4rem);letter-spacing:3px;margin-bottom:1rem;position:relative;line-height:1.1}
+        .gtext{background:linear-gradient(135deg,var(--neon-blue),var(--neon-pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+        .lede{color:var(--text-body);font-size:.95rem;margin-bottom:2rem;line-height:1.7;position:relative}
+        .lede strong{color:var(--neon-gold)}
+
+        form{display:flex;flex-direction:column;gap:.85rem;text-align:left;position:relative}
+        label{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:-.4rem}
+        input,textarea{width:100%;padding:.9rem 1.1rem;border-radius:12px;background:rgba(0,0,0,.25);border:1px solid var(--glass-border-hi);color:#fff;font-size:.95rem;font-family:'Space Mono',monospace;transition:all .25s}
+        input:focus,textarea:focus{outline:none;border-color:var(--neon-blue);box-shadow:0 0 20px rgba(0,243,255,.15);background:rgba(0,0,0,.4)}
+        input::placeholder,textarea::placeholder{color:rgba(196,196,212,.4)}
+        textarea{resize:vertical;min-height:80px;font-family:'Space Mono',monospace}
+        button[type=submit]{margin-top:.6rem;padding:1.15rem 1.5rem;background:linear-gradient(135deg,var(--neon-blue),var(--neon-pink));color:#000;font-weight:900;font-family:'Orbitron',sans-serif;font-size:.9rem;letter-spacing:3px;border-radius:100px;border:none;text-transform:uppercase;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 0 30px rgba(0,243,255,.2)}
+        button[type=submit]:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 50px rgba(0,243,255,.4),0 0 80px rgba(255,0,153,.15)}
+
+        .success{display:none;margin-top:1.4rem;padding:1rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);border-radius:12px;color:var(--neon-gold);font-size:.88rem;line-height:1.6;position:relative}
+
+        .perks{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);position:relative}
+        .perks-title{font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
+        .perks-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;text-align:left}
+        .perk{font-size:.78rem;color:var(--text-body);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
+        .perk .tick{flex-shrink:0;color:var(--neon-blue);font-weight:900;margin-top:1px}
+
+        footer{padding:2rem 1.5rem;text-align:center;border-top:1px solid var(--glass-border);background:rgba(0,0,0,.2);position:relative;z-index:2}
+        .footer-links{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-bottom:.6rem}
+        .footer-links a{color:var(--text-dim);text-decoration:none;font-size:.7rem;letter-spacing:1.5px;transition:color .25s}
+        .footer-links a:hover{color:var(--neon-blue)}
+        .footer-copy{font-size:.62rem;color:rgba(255,255,255,.2);letter-spacing:1.5px}
+
+        @media (max-width:560px){
+            nav{padding:.9rem 1.2rem}
+            .logo{font-size:.85rem;letter-spacing:2px}
+            .logo-t{font-size:.7rem}
+            .wrap{padding:2.2rem 1.5rem;border-radius:18px}
+            h1{letter-spacing:2px}
+            .perks-list{grid-template-columns:1fr}
+        }
+        @media (prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+        }
     </style>
 </head>
 <body>
-
 <div class="stars"></div>
 <div class="content">
-  <h1 class="gradient-text">JOIN THE WAITLIST</h1>
-  <p style="font-size:1.2rem;color:#ffd700;margin-bottom:2rem">Be the first to Rise to the top of the leaderboards when Quantum button launches in 2026.</p>
 
-  <form action="mailto:Spencerthegathering@gmail.com" method="post" enctype="text/plain" onsubmit="document.getElementById('success').style.display='block';return true;">
-    <input type="text" name="Name" placeholder="Your name" required>
-    <input type="email" name="Email" placeholder="Your email" required>
-    <textarea name="Message" rows="3" placeholder="Why do you want to be first? (optional)"></textarea>
-    <button type="submit">🚀 YES, SIGN ME UP!</button>
-  </form>
+    <div class="nav-wrap">
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-s">Spencer</span><span class="logo-t">the</span><span class="logo-g">Gathering</span>
+            </a>
+            <a href="index.html" class="back-link" id="backLink">← Back</a>
+        </nav>
+    </div>
 
-  <p id="success" class="success">✅ Thank you! Your email has been sent to Spencerthegathering@gmail.com</p>
+    <main>
+        <div class="wrap">
+            <div class="eyebrow"><span class="pulse"></span>Quantum Button • Closed Beta</div>
+            <h1>Join The <span class="gtext">Quantum Waitlist.</span></h1>
+            <p class="lede">Be one of the first into the closed beta. Climb the leaderboards before anyone else even knows the game exists. <strong>Free, no spam, unsubscribe anytime.</strong></p>
 
-  <a href="quantum.html" style="margin-top:2rem;display:inline-block;color:#8b8ba7">← Back to Quantum Button</a>
+            <form action="mailto:Spencerthegathering@gmail.com" method="post" enctype="text/plain" onsubmit="document.getElementById('success').style.display='block';return true;">
+                <label for="name">Your name</label>
+                <input id="name" type="text" name="Name" placeholder="What should we call you?" required autocomplete="name">
+
+                <label for="email">Email address</label>
+                <input id="email" type="email" name="Email" placeholder="you@example.com" required autocomplete="email">
+
+                <label for="msg">Why do you want in? <span style="opacity:.5;text-transform:none;letter-spacing:0">(optional)</span></label>
+                <textarea id="msg" name="Message" rows="3" placeholder="Tell us why — bragging rights granted."></textarea>
+
+                <button type="submit">🔥 Sign Me Up</button>
+            </form>
+
+            <p id="success" class="success">✅ You're on the list! Your email's been sent to spencerthegathering@gmail.com — we'll be in touch when beta invites go out.</p>
+
+            <div class="perks">
+                <div class="perks-title">// What you get as a waitlister</div>
+                <div class="perks-list">
+                    <div class="perk"><span class="tick">▸</span>First access to closed beta</div>
+                    <div class="perk"><span class="tick">▸</span>Exclusive launch mythic skin</div>
+                    <div class="perk"><span class="tick">▸</span>Bonus starter power items</div>
+                    <div class="perk"><span class="tick">▸</span>Dev log updates straight to inbox</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="quantum.html">Quantum Button</a>
+            <a href="achievo.html">Achievo</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="mailto:Spencerthegathering@gmail.com">Contact</a>
+        </div>
+        <div class="footer-copy">© 2026 Spencer The Gathering • Quantum Button v2.0</div>
+    </footer>
+
 </div>
 
+<script>
+    // Smart back-link: detect where the user came from
+    (function(){
+        var back = document.getElementById('backLink');
+        if(!back) return;
+
+        // Priority 1: ?from= query param (set by links from each page)
+        var params = new URLSearchParams(window.location.search);
+        var from = (params.get('from') || '').toLowerCase();
+
+        // Priority 2: document.referrer (fallback)
+        var ref = (document.referrer || '').toLowerCase();
+
+        var target = 'index.html';
+        var label = '← Back to Home';
+
+        if(from === 'quantum' || ref.indexOf('quantum.html') > -1){
+            target = 'quantum.html';
+            label  = '← Back to Quantum';
+        } else if(from === 'achievo' || ref.indexOf('achievo.html') > -1){
+            target = 'achievo.html';
+            label  = '← Back to Achievo';
+        } else if(from === 'home' || ref.indexOf('index.html') > -1 || ref.match(/\/(\?|$)/)){
+            target = 'index.html';
+            label  = '← Back to Home';
+        }
+        // (default already set to home)
+
+        back.href = target;
+        back.textContent = label;
+    })();
+</script>
 </body>
 </html>
-<!-- END OF WAITLIST.HTML -->
