@@ -111,7 +111,7 @@
         /* FEATURES */
         .features-section{padding:5rem 2rem;max-width:1200px;margin:0 auto}
         .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
-        .f-cell{background:var(--glass-bg);padding:2.2rem 1.8rem;border-radius:18px;border:1px solid var(--glass-border-hi);transition:all .35s;position:relative;overflow:hidden}
+        .f-cell{background:var(--glass-bg);padding:2.2rem 1.8rem;border-radius:18px;border:1px solid var(--glass-border-hi);transition:all .35s;position:relative;overflow:hidden;text-align:center}
         .f-cell::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 60%,rgba(155,92,255,.05));pointer-events:none}
         .f-cell:hover{transform:translateY(-6px);border-color:rgba(155,92,255,.4);box-shadow:0 0 50px rgba(155,92,255,.12)}
         .f-icon{font-size:2.4rem;margin-bottom:1rem;display:inline-block}
@@ -121,7 +121,7 @@
         /* QUESTS */
         .quests{padding:6rem 2rem;max-width:1200px;margin:0 auto}
         .quests-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:3rem}
-        .quest-card{background:linear-gradient(160deg,var(--glass-bg) 30%,rgba(155,92,255,.05));border:1px solid var(--glass-border-hi);border-radius:16px;padding:1.6rem 1.4rem;transition:all .35s}
+        .quest-card{background:linear-gradient(160deg,var(--glass-bg) 30%,rgba(155,92,255,.05));border:1px solid var(--glass-border-hi);border-radius:16px;padding:1.6rem 1.4rem;transition:all .35s;text-align:center}
         .quest-card:hover{transform:translateY(-4px);border-color:var(--neon-purple);box-shadow:0 0 32px rgba(155,92,255,.15)}
         .quest-icon{font-size:2.2rem;display:block;margin-bottom:.7rem;line-height:1}
         .quest-name{font-family:'Orbitron',sans-serif;font-weight:900;font-size:.9rem;letter-spacing:1.5px;color:var(--neon-purple);margin-bottom:.4rem;text-transform:uppercase}
@@ -156,7 +156,7 @@
         /* ACCESSIBILITY */
         .a11y{padding:6rem 2rem;max-width:1100px;margin:0 auto}
         .a11y-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:3rem}
-        .a11y-card{background:var(--glass-bg);border:1px solid var(--glass-border-hi);border-radius:16px;padding:1.7rem 1.4rem;text-align:left;transition:all .35s}
+        .a11y-card{background:var(--glass-bg);border:1px solid var(--glass-border-hi);border-radius:16px;padding:1.7rem 1.4rem;text-align:center;transition:all .35s}
         .a11y-card:hover{transform:translateY(-4px);border-color:rgba(74,208,255,.4);box-shadow:0 0 32px rgba(74,208,255,.12)}
         .a11y-icon{font-size:2rem;display:block;margin-bottom:.7rem;line-height:1}
         .a11y-card h4{font-family:'Orbitron',sans-serif;font-weight:900;font-size:.9rem;letter-spacing:1.5px;margin-bottom:.5rem;color:var(--neon-cyan);text-transform:uppercase}
@@ -174,8 +174,8 @@
 
         /* SQUAD */
         .team{max-width:1200px;margin:0 auto;padding:5rem 2rem}
-        .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1.5rem 1rem;margin-top:3rem}
-        .team-member{text-align:center;transition:transform .3s}
+        .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem 1.2rem;margin-top:3rem}
+        .team-member{width:110px;text-align:center;transition:transform .3s}
         .team-member:hover{transform:translateY(-6px)}
         .team-avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;border:3px solid var(--neon-purple);box-shadow:0 0 22px rgba(155,92,255,.45);margin-bottom:.6rem;transition:all .3s}
         .team-member:hover .team-avatar{border-color:var(--neon-cyan);box-shadow:0 0 30px rgba(74,208,255,.5)}
@@ -254,7 +254,8 @@
             .pro-col{padding:2rem 1.4rem}
             .pro-name{font-size:1.6rem}
 
-            .team-grid{grid-template-columns:repeat(3,1fr);gap:1.2rem .6rem}
+            .team-grid{gap:1.2rem .6rem}
+            .team-member{width:88px}
             .team-avatar{width:72px;height:72px;border-width:2px}
             .team-name{font-size:.62rem}
             .team-role{font-size:.56rem}
@@ -268,7 +269,8 @@
             .footer-inner{flex-direction:column;text-align:center}
         }
         @media (max-width:420px){
-            .team-grid{grid-template-columns:repeat(2,1fr)}
+            .team-member{width:calc(50% - .6rem)}
+            .team-avatar{width:80px;height:80px}
             .hero h1{letter-spacing:2px}
         }
         @media (prefers-reduced-motion:reduce){
@@ -522,7 +524,7 @@
                 <div class="pro-features">
                     <div class="pro-feat yes"><span class="tick">✓</span>Everything in Free</div>
                     <div class="pro-feat gold"><span class="tick">★</span><strong>Zero ads. Anywhere. Ever.</strong></div>
-                    <div class="pro-feat gold"><span class="tick">★</span>Glowing <strong>PRO ★</strong> badge by your name across the whole app</div>
+                    <div class="pro-feat gold"><span class="tick">★</span><strong>Glowing PRO badge next to your name, everywhere</strong></div>
                     <div class="pro-feat gold"><span class="tick">★</span>Early access to new quest templates</div>
                     <div class="pro-feat gold"><span class="tick">★</span>Custom streak themes &amp; sound packs</div>
                     <div class="pro-feat gold"><span class="tick">★</span>Priority support from the studio</div>
