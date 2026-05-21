@@ -3,270 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Spencer The Gathering</title>
-    <meta name="description" content="Privacy Policy for Quantum Button and Spencer The Gathering apps.">
+    <title>Privacy Policy • Spencer The Gathering</title>
+    <meta name="description" content="How Spencer The Gathering handles your data across Quantum Button, Achievo and this website. Plain language. No dark patterns.">
+    <meta name="theme-color" content="#05081a">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--neon-blue:#00f3ff;--neon-pink:#ff0099;--neon-gold:#ffd700;--neon-purple:#9b5cff;--neon-green:#22ff22;--bg-dark:#05081a;--glass-bg:rgba(255,255,255,0.03);--glass-bg-hi:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.08);--glass-border-hi:rgba(255,255,255,0.18);--text-dim:#8b8ba7;--text-body:#c4c4d4;--text-bright:#fff}
         body,a,button{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%2300f3ff'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%2300f3ff'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%2300f3ff' opacity='0.6'/%3E%3C/svg%3E") 16 16,auto}
-a:hover,button:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16,pointer}
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        a:hover,button:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16,pointer}
 
-        :root {
-            --neon-blue: #00f3ff;
-            --neon-pink: #ff0099;
-            --neon-gold: #ffd700;
-            --bg-dark: #050510;
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-dim: #8b8ba7;
-            --text-body: #b4b4cc;
-        }
-
-        body, a {
-            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%2300f3ff'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%2300f3ff'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%2300f3ff' opacity='0.6'/%3E%3C/svg%3E") 16 16, auto;
-        }
-        a:hover {
-            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232d3748' stroke='%23ff0099' stroke-width='2'/%3E%3Ccircle cx='10' cy='14' r='3' fill='%23ff0099'/%3E%3Ccircle cx='22' cy='14' r='3' fill='%23ff0099'/%3E%3Crect x='9' y='20' width='14' height='2' rx='1' fill='%23ff0099' opacity='0.8'/%3E%3C/svg%3E") 16 16, pointer;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background: var(--bg-dark);
-            color: white;
-            font-family: 'Space Mono', monospace;
-            line-height: 1.8;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 20% 0%, rgba(26, 11, 46, 0.6) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 100%, rgba(255, 0, 153, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(0, 243, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.02) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .content { position: relative; z-index: 2; flex: 1; }
+        html{scroll-behavior:smooth;scroll-padding-top:80px}
+        body{background:var(--bg-dark);color:#fff;font-family:'Space Mono',monospace;line-height:1.7}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 30%,#111640 0%,transparent 55%),var(--bg-dark);pointer-events:none;z-index:0}
+        .stars{position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 25% 45%,rgba(255,255,255,.5) 50%,transparent 50%),radial-gradient(1px 1px at 40% 15%,rgba(255,255,255,.7) 50%,transparent 50%),radial-gradient(1px 1px at 55% 70%,rgba(255,255,255,.4) 50%,transparent 50%),radial-gradient(1px 1px at 70% 35%,rgba(255,255,255,.6) 50%,transparent 50%),radial-gradient(1px 1px at 85% 80%,rgba(255,255,255,.5) 50%,transparent 50%);animation:twinkle 4s infinite alternate;pointer-events:none;z-index:0}
+        @keyframes twinkle{0%{opacity:.6}100%{opacity:1}}
+        .content{position:relative;z-index:2}
+        .gtext{background:linear-gradient(135deg,var(--neon-blue),var(--neon-pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 
         /* NAV */
-        nav {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .nav-wrap{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(5,8,26,.7);border-bottom:1px solid var(--glass-border)}
+        nav{max-width:1200px;margin:0 auto;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+        .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase}
+        .logo-s{color:var(--neon-blue)}.logo-t{color:rgba(255,255,255,.25);font-weight:400;font-size:.85rem}.logo-g{color:var(--neon-pink)}
+        .back-link{color:var(--text-dim);text-decoration:none;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s;padding:.5rem .8rem;border-radius:6px;border:1px solid var(--glass-border-hi)}
+        .back-link:hover{color:var(--neon-blue);border-color:var(--neon-blue)}
 
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            text-decoration: none;
-        }
-        .logo-s { color: var(--neon-blue); }
-        .logo-t { color: rgba(255,255,255,0.3); font-weight: 400; }
-        .logo-g { color: var(--neon-pink); }
+        /* HERO */
+        .hero{max-width:900px;margin:0 auto;padding:5rem 2rem 3rem;text-align:center}
+        .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--neon-blue);background:rgba(0,243,255,.06);border:1px solid rgba(0,243,255,.25);padding:.5rem 1.1rem;border-radius:100px;margin-bottom:1.5rem}
+        h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:4px;line-height:1.1;margin-bottom:1.2rem}
+        .lede{color:var(--text-body);font-size:1.05rem;max-width:680px;margin:0 auto 1.5rem;line-height:1.75}
+        .meta{font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim)}
 
-        .back-link {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-        .back-link:hover { color: var(--neon-blue); }
+        /* TLDR BOX */
+        .tldr{max-width:880px;margin:2rem auto 0;padding:0 2rem}
+        .tldr-inner{background:linear-gradient(135deg,rgba(34,255,34,.05),rgba(0,243,255,.05));border:1px solid rgba(34,255,34,.25);border-radius:18px;padding:1.8rem 2rem}
+        .tldr-title{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--neon-green);margin-bottom:.8rem}
+        .tldr-list{display:grid;gap:.5rem;list-style:none}
+        .tldr-list li{display:flex;align-items:flex-start;gap:.6rem;color:var(--text-body);font-size:.92rem;line-height:1.6}
+        .tldr-list li::before{content:'✓';color:var(--neon-green);font-weight:900;flex-shrink:0;margin-top:1px}
 
         /* ARTICLE */
-        .article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 2rem 6rem;
-        }
+        article{max-width:880px;margin:0 auto;padding:3rem 2rem 4rem}
+        article h2{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:2px;text-transform:uppercase;color:var(--neon-blue);margin:3rem 0 1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--glass-border)}
+        article h2:first-of-type{margin-top:1rem}
+        article h3{font-family:'Orbitron',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--neon-gold);margin:1.8rem 0 .8rem}
+        article p{color:var(--text-body);font-size:.95rem;margin-bottom:1.1rem;line-height:1.75}
+        article strong{color:var(--text-bright);font-weight:700}
+        article a{color:var(--neon-blue);text-decoration:none;border-bottom:1px solid rgba(0,243,255,.3);transition:border-color .25s}
+        article a:hover{border-color:var(--neon-blue)}
+        article ul{list-style:none;margin:1rem 0 1.4rem;padding:0}
+        article ul li{color:var(--text-body);font-size:.92rem;margin-bottom:.7rem;padding-left:1.5rem;position:relative;line-height:1.7}
+        article ul li::before{content:'▸';position:absolute;left:0;color:var(--neon-pink);font-weight:700}
+        .callout{background:var(--glass-bg);border:1px solid var(--glass-border-hi);border-left:3px solid var(--neon-gold);border-radius:8px;padding:1.2rem 1.4rem;margin:1.4rem 0;color:var(--text-body);font-size:.9rem}
+        .callout strong{color:var(--neon-gold)}
 
-        .article-header {
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 2rem;
-            margin-bottom: 3rem;
-        }
+        .toc{background:var(--glass-bg);border:1px solid var(--glass-border-hi);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:3rem}
+        .toc-title{font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:.8rem}
+        .toc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;padding:0;margin:0}
+        .toc-list li{padding:0;margin:0}
+        .toc-list li::before{display:none}
+        .toc-list a{color:var(--text-body);font-size:.82rem;border:none;display:block;padding:.2rem 0}
+        .toc-list a:hover{color:var(--neon-blue)}
 
-        .article-header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.75rem;
-        }
-
-        .article-date {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.2);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .article h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--neon-blue);
-            letter-spacing: 2px;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .article p {
-            color: var(--text-body);
-            font-size: 0.85rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .article strong { color: white; }
-
-        .article a {
-            color: var(--neon-blue);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
-            transition: border-color 0.3s;
-        }
-        .article a:hover { border-color: var(--neon-blue); }
-
-        .article ul {
-            list-style: none;
-            margin-bottom: 1.5rem;
-            padding-left: 0;
-        }
-
-        .article ul li {
-            color: var(--text-body);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .article ul li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: var(--neon-pink);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
+        .contact-box{margin-top:3rem;padding:2rem;border:1px solid rgba(255,215,0,.3);border-radius:16px;background:linear-gradient(135deg,rgba(255,215,0,.04),rgba(0,243,255,.04));text-align:center}
+        .contact-box p{color:var(--text-body);margin:0}
+        .contact-box a{color:var(--neon-blue)}
 
         /* FOOTER */
-        footer {
-            border-top: 1px solid var(--glass-border);
-            padding: 2.5rem 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+        footer{border-top:1px solid var(--glass-border);padding:3rem 2rem 2rem;text-align:center;background:rgba(0,0,0,.2)}
+        .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+        .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+        .footer-links a{color:var(--text-dim);text-decoration:none;font-size:.75rem;letter-spacing:1.5px;transition:color .25s}
+        .footer-links a:hover{color:var(--neon-blue)}
+        .footer-copy{font-size:.65rem;color:rgba(255,255,255,.2);letter-spacing:1.5px}
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
+        @media (max-width:768px){
+            html{scroll-padding-top:70px}
+            nav{padding:.9rem 1.2rem}
+            .logo{font-size:.85rem;letter-spacing:2px}
+            .logo-t{font-size:.7rem}
+            .hero{padding:3rem 1.2rem 2rem}
+            h1{font-size:2rem;letter-spacing:2px}
+            article{padding:2rem 1.2rem 3rem}
+            .tldr{padding:0 1.2rem}
+            .tldr-inner{padding:1.4rem 1.2rem}
+            article h2{font-size:1rem;letter-spacing:1.5px}
+            .toc-list{grid-template-columns:1fr}
+            .footer-inner{flex-direction:column}
         }
-
-        .footer-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.75rem;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover { color: var(--neon-blue); }
-
-        .footer-copy {
-            font-size: 0.6rem;
-            color: rgba(255,255,255,0.1);
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 0.75rem; }
-            .article-header h1 { font-size: 1.5rem; }
+        @media (prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
         }
     </style>
 </head>
 <body>
-
 <div class="stars"></div>
 <div class="content">
 
-  <!-- NAV - matches new index/quantum style -->
-  <nav>
-    <a href="index.html" class="logo"><span class="logo-s">Spencer</span><span class="logo-t">the</span><span class="logo-g">Gathering</span></a>
-    <a href="index.html" class="back-link">&larr; Back to Home</a>
-  </nav>
-
-  <article class="article" style="max-width:900px;margin:0 auto;padding:4rem 2rem 8rem;color:#fff">
-    <div class="article-header" style="border-bottom:2px solid rgba(0,243,255,.3);padding-bottom:2rem">
-      <h1 style="font-family:'Orbitron',sans-serif;font-size:2.8rem;letter-spacing:4px;
-           background:linear-gradient(135deg,#00f3ff,#ff0099);
-           -webkit-background-clip:text;
-           background-clip:text;
-           -webkit-text-fill-color:transparent;
-           color:transparent;">
-  PRIVACY PROTOCOL
-</h1>
-      <div class="article-date" style="color:#ffd700">Effective: January 25, 2026 • Quantum Button v2.0</div>
+    <div class="nav-wrap">
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-s">Spencer</span><span class="logo-t">the</span><span class="logo-g">Gathering</span>
+            </a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
     </div>
 
-    <p style="color:#b4b4cc;font-size:1.05rem;line-height:1.9">We protect your data like we protect high scores. Here’s how Quantum Button handles your information in the neon arena.</p>
+    <section class="hero">
+        <div class="eyebrow">// LEGAL</div>
+        <h1>Privacy <span class="gtext">Policy.</span></h1>
+        <p class="lede">How we handle your data across Quantum Button, Achievo and this website. Written in plain language, not lawyer-speak. If you'd rather an actual lawyer reviewed it, we're cool with that too.</p>
+        <div class="meta">Effective May 22, 2026 • Version 2.0</div>
+    </section>
 
-    <h2 style="color:#00f3ff;margin-top:4rem">1. Data We Collect</h2>
-    <p>We only collect what’s needed to keep battles fair and fun: scores, taps, and game progress. No creepy tracking.</p>
-
-    <h2 style="color:#00f3ff">2. Third-Party Services (Used in v2.0)</h2>
-    <p>Firebase (scores & VS matchmaking), AdMob (ads), RevenueCat (Pro upgrades). All handled securely.</p>
-
-    <h2 style="color:#00f3ff">3. Your Rights</h2>
-    <p>You can delete your account anytime. Just tap the button in settings (see storage.js in the game files).</p>
-
-    <h2 style="color:#00f3ff">4. Children’s Privacy</h2>
-    <p>Under 13? Please play with a grown-up watching. We don’t collect kid data.</p>
-
-    <div style="margin-top:5rem;padding:2rem;border:2px solid rgba(255,215,0,.3);border-radius:16px;background:rgba(255,215,0,.05)">
-      <p style="text-align:center;color:#ffd700">Questions? Hit us at <a href="mailto:Spencerthegathering@gmail.com" style="color:#00f3ff">Spencerthegathering@gmail.com</a></p>
+    <div class="tldr">
+        <div class="tldr-inner">
+            <div class="tldr-title">// TL;DR — The Short Version</div>
+            <ul class="tldr-list">
+                <li>We collect the minimum data needed to run the apps — nothing more.</li>
+                <li>We <strong>never sell your data</strong> to advertisers, brokers or anyone else.</li>
+                <li>Quantum Button's live video feed is fully peer-to-peer — we don't see it, store it, or record it.</li>
+                <li>You can export or delete everything you've stored, anytime, from the app settings.</li>
+                <li>Children under 13 aren't permitted to create an account.</li>
+            </ul>
+        </div>
     </div>
-  </article>
 
-  <footer style="border-top:1px solid rgba(255,255,255,.08);padding:3rem 2rem;text-align:center">
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Protocol</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:Spencerthegathering@gmail.com">Contact the Gathering</a>
-    </div>
-    <div class="footer-copy">© 2026 Spencer The Gathering • Quantum Button v2.0 • Built in the Neon Realm</div>
-  </footer>
+    <article>
+        <div class="toc">
+            <div class="toc-title">// Jump to a section</div>
+            <ul class="toc-list">
+                <li><a href="#who">1. Who we are</a></li>
+                <li><a href="#what">2. What we collect</a></li>
+                <li><a href="#how">3. How we use it</a></li>
+                <li><a href="#video">4. Live video (Quantum)</a></li>
+                <li><a href="#camera">5. Camera-proof posts (Achievo)</a></li>
+                <li><a href="#third">6. Third-party services</a></li>
+                <li><a href="#cookies">7. Cookies &amp; analytics</a></li>
+                <li><a href="#ads">8. Ads (Free tier only)</a></li>
+                <li><a href="#rights">9. Your rights</a></li>
+                <li><a href="#children">10. Children's privacy</a></li>
+                <li><a href="#intl">11. International users</a></li>
+                <li><a href="#changes">12. Changes to this policy</a></li>
+            </ul>
+        </div>
+
+        <h2 id="who">1. Who We Are</h2>
+        <p>Spencer The Gathering is an independent game and app studio based in Queensland, Australia. We make Quantum Button (a 1v1 PvP tap-battle game) and Achievo (a social app that helps you take breaks from social apps). "We," "us," and "our" in this policy refers to Spencer The Gathering. You can always reach us at <a href="mailto:Spencerthegathering@gmail.com">Spencerthegathering@gmail.com</a>.</p>
+
+        <h2 id="what">2. What Data We Collect</h2>
+        <p>We collect different things depending on which product you're using. The full breakdown:</p>
+
+        <h3>This website (spencer-the-gathering.com)</h3>
+        <ul>
+            <li><strong>Basic visitor analytics</strong> — page views, country (not city), device type, referrer. Aggregated and anonymous.</li>
+            <li><strong>Waitlist signups</strong> — your name and email when you submit the waitlist form. Used only to email you when beta access opens.</li>
+        </ul>
+
+        <h3>Quantum Button</h3>
+        <ul>
+            <li><strong>Account info</strong> — display name, email or sign-in identifier, your chosen squad-pet avatar.</li>
+            <li><strong>Gameplay data</strong> — high scores, taps per second, match results, power-item usage, leaderboard position, mode preferences.</li>
+            <li><strong>Squad &amp; friends</strong> — friend list, invite codes you've shared.</li>
+            <li><strong>Device info</strong> — model, OS version, language, region (for matchmaking).</li>
+            <li><strong>Live video stream</strong> — see Section 4 below. <strong>We do not store, record or process this.</strong></li>
+        </ul>
+
+        <h3>Achievo</h3>
+        <ul>
+            <li><strong>Account info</strong> — display name, email, avatar, optional bio.</li>
+            <li><strong>Quest data</strong> — which quests you've accepted, your streaks, XP, level, completion history.</li>
+            <li><strong>Posts</strong> — videos, photos and threaded conversations you create on the platform.</li>
+            <li><strong>Social graph</strong> — friends, follows, cheers, conversation participants.</li>
+            <li><strong>Subscription status</strong> — whether you're on Free or Pro (managed via Apple/Google billing — we never see your card details).</li>
+            <li><strong>Accessibility preferences</strong> — your settings choices, stored locally and on your account so the experience is consistent across devices.</li>
+        </ul>
+
+        <h2 id="how">3. How We Use Your Data</h2>
+        <p>We use the data above for these purposes — and only these purposes:</p>
+        <ul>
+            <li><strong>Run the apps</strong> — show your scores, sync streaks across devices, match you with friends, deliver your daily spin crate.</li>
+            <li><strong>Communicate with you</strong> — send beta invites, occasional product updates, transactional emails (e.g. password reset). You can unsubscribe at any time.</li>
+            <li><strong>Improve the experience</strong> — aggregated, anonymised crash reports and performance metrics. We never look at individual usage patterns.</li>
+            <li><strong>Keep play fair</strong> — detect cheating, bots and abuse on leaderboards or in PvP.</li>
+            <li><strong>Comply with the law</strong> — respond to lawful requests from courts or regulators where required.</li>
+        </ul>
+        <div class="callout"><strong>What we do NOT do:</strong> we don't sell, rent, share-for-advertising or trade your personal data. We don't build advertising profiles. We don't track you across the internet. Period.</div>
+
+        <h2 id="video">4. Live Video Feed (Quantum Button)</h2>
+        <p>This deserves its own section because it's the most-asked question we get.</p>
+        <p>The live video feed during a 1v1 match in Quantum Button is <strong>100% peer-to-peer</strong>. We use WebRTC, which establishes a direct, encrypted connection between you and your opponent. The video and audio stream goes <strong>device-to-device</strong> — it does not pass through, get cached by, or get recorded on any Spencer The Gathering server. Ever.</p>
+        <p>When the match ends, the connection closes and the stream is gone. There is no recording. No replay. No archive. No human at Spencer The Gathering has ever or will ever see your gameplay video.</p>
+        <p>You can disable the video feed entirely in settings if you'd prefer to play with audio only or completely silent.</p>
+
+        <h2 id="camera">5. Camera-Proof Posts (Achievo)</h2>
+        <p>When you take a camera-proof photo or video to verify a quest, the file is uploaded to encrypted storage and linked to your account. You — and only you — control who sees it:</p>
+        <ul>
+            <li><strong>Private</strong> — only you and the friends you tag</li>
+            <li><strong>Squad</strong> — visible to your friends list</li>
+            <li><strong>Public</strong> — visible in the global feed</li>
+        </ul>
+        <p>You can delete any post at any time. Deleted posts are removed from our servers within 30 days. You own the content you create — we don't claim ownership or rights to use it outside the app.</p>
+
+        <h2 id="third">6. Third-Party Services We Use</h2>
+        <p>We use a small set of well-vetted services to keep the apps running. Each one is configured to receive the minimum data necessary:</p>
+        <ul>
+            <li><strong>Firebase (Google)</strong> — account auth, leaderboards, real-time matchmaking. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a>.</li>
+            <li><strong>Apple App Store / Google Play</strong> — distribution, sign-in with Apple/Google, in-app purchases (Pro tier).</li>
+            <li><strong>RevenueCat</strong> — subscription management for Achievo Pro. They never see your payment card.</li>
+            <li><strong>AdMob (Google)</strong> — ads in Achievo Free only. Configured to use limited ad tracking.</li>
+            <li><strong>Cloudflare</strong> — this website's hosting and DDoS protection.</li>
+        </ul>
+
+        <h2 id="cookies">7. Cookies &amp; Analytics</h2>
+        <p>This website uses minimal first-party cookies for visitor analytics (privacy-respecting, anonymised). We don't use third-party advertising cookies on the website. The apps use local storage on your device to remember your preferences and keep you logged in — that's it.</p>
+
+        <h2 id="ads">8. Ads (Achievo Free Tier Only)</h2>
+        <p>Achievo Free shows ads between feed posts to support development. The ads are served by Google AdMob with these guardrails:</p>
+        <ul>
+            <li>We use Apple's App Tracking Transparency / Google's UMP consent flow — you can decline tracking and still see (non-personalised) ads.</li>
+            <li>Your personal data, posts, quest history and social graph are <strong>never</strong> sent to ad networks.</li>
+            <li>Want zero ads forever? <a href="achievo.html#pro">Achievo Pro</a> removes them entirely.</li>
+        </ul>
+        <p>Quantum Button has no ads.</p>
+
+        <h2 id="rights">9. Your Rights</h2>
+        <p>Wherever you live, you have these rights. Where you live (EU/UK/California/Australia) you may have extra rights — they're spelled out by your local law, and we honour all of them.</p>
+        <ul>
+            <li><strong>Access</strong> — request a copy of everything we hold about you.</li>
+            <li><strong>Export</strong> — download your data in a portable format from app settings.</li>
+            <li><strong>Correct</strong> — fix anything that's wrong.</li>
+            <li><strong>Delete</strong> — wipe your account and all associated data. The button is in settings. No "are you sure" loops or dark patterns.</li>
+            <li><strong>Opt out</strong> — turn off non-essential emails, opt out of analytics, opt out of personalised ads.</li>
+            <li><strong>Complain</strong> — to us first (we'll fix it), or to your local data protection authority if we don't resolve it to your satisfaction.</li>
+        </ul>
+        <p>To exercise any of these rights, email <a href="mailto:Spencerthegathering@gmail.com">Spencerthegathering@gmail.com</a>. We aim to respond within 14 days.</p>
+
+        <h2 id="children">10. Children's Privacy</h2>
+        <p>Our apps are intended for users 13 and older. We don't knowingly collect data from children under 13. If you're a parent and believe your child created an account, email us and we'll delete it.</p>
+        <p>Quantum Button has a guardian-supervised mode for younger players in a future release — when it ships it'll have additional, stricter privacy controls.</p>
+
+        <h2 id="intl">11. International Users</h2>
+        <p>Spencer The Gathering operates from Australia, but our users are worldwide. By using our apps you consent to your data being processed in Australia and the locations where our service providers operate (typically the US and the EU for Google/Apple/Cloudflare).</p>
+        <p>Where required, we rely on Standard Contractual Clauses and the providers' own certifications (e.g. EU-US Data Privacy Framework) to ensure your data remains protected.</p>
+
+        <h2 id="changes">12. Changes to This Policy</h2>
+        <p>If we change this policy materially, we'll email you (or surface a banner in the apps) at least 30 days before the change takes effect. Minor wording fixes happen quietly and are reflected in the "Effective" date at the top.</p>
+
+        <div class="contact-box">
+            <p>Questions, complaints or data requests?<br>Email <a href="mailto:Spencerthegathering@gmail.com">Spencerthegathering@gmail.com</a> — a real human responds.</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-s">Spencer</span><span class="logo-t">the</span><span class="logo-g">Gathering</span>
+            </a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="quantum.html">Quantum Button</a>
+                <a href="achievo.html">Achievo</a>
+                <a href="terms.html">Terms</a>
+                <a href="mailto:Spencerthegathering@gmail.com">Contact</a>
+            </div>
+            <div class="footer-copy">© 2026 Spencer The Gathering</div>
+        </div>
+    </footer>
+
 </div>
-
 </body>
 </html>
