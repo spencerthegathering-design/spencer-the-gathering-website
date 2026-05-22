@@ -129,16 +129,16 @@
         /* ============= PROJECTS ============= */
         .projects-wrap{padding:5rem 2rem;max-width:1200px;margin:0 auto}
         .project-stack{display:grid;gap:2rem}
-        .project-card{background:linear-gradient(135deg,var(--glass-bg),var(--glass-bg-hi));border:1px solid var(--glass-border-hi);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;gap:0;transition:all .4s;position:relative}
+        .project-card{background:linear-gradient(135deg,var(--glass-bg),var(--glass-bg-hi));border:1px solid var(--glass-border-hi);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:center;transition:all .4s;position:relative}
         .project-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 60px rgba(0,243,255,.08);border-color:rgba(0,243,255,.3)}
         .project-card.card-achievo:hover{border-color:rgba(155,92,255,.35);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 60px rgba(155,92,255,.1)}
         .project-info{padding:3rem;display:flex;flex-direction:column;justify-content:center}
-        .project-visual{position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,243,255,.06),rgba(255,0,153,.05)),#060a1f;padding:2rem;overflow:hidden;min-height:340px}
+        .project-visual{position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,243,255,.06),rgba(255,0,153,.05)),#060a1f;padding:.7rem;overflow:hidden;border-radius:22px;margin:1.5rem;justify-self:center;width:calc(100% - 3rem)}
         .project-card.card-achievo .project-visual{background:linear-gradient(135deg,rgba(155,92,255,.08),rgba(74,208,255,.05)),#0a0820}
-        .project-visual::before{content:'';position:absolute;width:120%;height:120%;background:radial-gradient(circle at center,rgba(0,243,255,.1),transparent 65%);animation:visual-rotate 18s linear infinite}
+        .project-visual::before{content:'';position:absolute;width:140%;height:140%;background:radial-gradient(circle at center,rgba(0,243,255,.12),transparent 55%);animation:visual-rotate 18s linear infinite;pointer-events:none}
         .project-card.card-achievo .project-visual::before{background:radial-gradient(circle at center,rgba(155,92,255,.12),transparent 65%)}
         @keyframes visual-rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-        .project-visual img{position:relative;z-index:2;max-width:88%;max-height:300px;border-radius:24px;object-fit:cover;clip-path:inset(0 6% 6% 0 round 22px);-webkit-clip-path:inset(0 6% 6% 0 round 22px)}
+        .project-visual img{position:relative;z-index:2;width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:18px;display:block;clip-path:inset(0 6% 6% 0 round 14px);-webkit-clip-path:inset(0 6% 6% 0 round 14px)}
 
         .project-status{display:inline-flex;align-items:center;gap:.45rem;font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;padding:.45rem 1rem;border-radius:100px;margin-bottom:1.5rem;align-self:flex-start}
         .status-beta{color:var(--neon-blue);border:1px solid rgba(0,243,255,.3);background:rgba(0,243,255,.07)}
@@ -259,7 +259,7 @@
         /* ============= RESPONSIVE — MOBILE FIRST OVERRIDES ============= */
         @media (max-width: 900px){
             .project-card{grid-template-columns:1fr}
-            .project-visual{min-height:280px;order:-1}
+            .project-visual{order:-1;margin:1.5rem auto 0;width:calc(100% - 3rem);max-width:340px}
             .project-info{padding:2rem 1.6rem}
             .youtube-section{grid-template-columns:1fr;gap:2rem;text-align:center}
             .yt-image{max-width:100%}
