@@ -167,11 +167,14 @@
         .peek{padding:5rem 2rem;max-width:1300px;margin:0 auto;text-align:center;overflow:hidden}
         .peek-rail{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem}
         .peek-rail img{width:200px;height:auto;max-height:420px;border-radius:18px;object-fit:cover;border:2px solid var(--glass-border-hi);transition:all .4s;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-        .peek-rail img:nth-child(1){border-color:rgba(0,243,255,.4)}
-        .peek-rail img:nth-child(2){border-color:rgba(255,0,153,.4);transform:translateY(20px)}
-        .peek-rail img:nth-child(3){border-color:rgba(255,215,0,.4)}
-        .peek-rail img:nth-child(4){border-color:rgba(0,243,255,.4);transform:translateY(20px)}
-        .peek-rail img:nth-child(5){border-color:rgba(255,0,153,.4)}
+        .peek-rail img:nth-child(8n+1){border-color:rgba(0,243,255,.4)}
+        .peek-rail img:nth-child(8n+2){border-color:rgba(255,0,153,.4);transform:translateY(20px)}
+        .peek-rail img:nth-child(8n+3){border-color:rgba(255,215,0,.4)}
+        .peek-rail img:nth-child(8n+4){border-color:rgba(0,243,255,.4);transform:translateY(20px)}
+        .peek-rail img:nth-child(8n+5){border-color:rgba(255,0,153,.4)}
+        .peek-rail img:nth-child(8n+6){border-color:rgba(255,215,0,.4);transform:translateY(20px)}
+        .peek-rail img:nth-child(8n+7){border-color:rgba(0,243,255,.4)}
+        .peek-rail img:nth-child(8n){border-color:rgba(255,0,153,.4);transform:translateY(20px)}
         .peek-rail img:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 20px 50px rgba(0,243,255,.25)}
 
         /* ============= PILLARS ============= */
@@ -528,13 +531,16 @@
     <section class="peek">
         <div class="section-eyebrow">// FROM THE BUILD</div>
         <h2 class="section-title">Inside <span class="gtext">Quantum Button.</span></h2>
-        <p class="section-subtitle">Five screens from the current beta build. Updated whenever we ship something worth showing.</p>
+        <p class="section-subtitle">Eight screens from the current beta build. Updated whenever we ship something worth showing.</p>
         <div class="peek-rail">
-            <img src="screenshot1.png" alt="Main Menu" loading="lazy">
-            <img src="screenshot2.png" alt="Gameplay" loading="lazy">
-            <img src="screenshot3.png" alt="Game Over Screen" loading="lazy">
-            <img src="screenshot4.png" alt="Daily Spin" loading="lazy">
-            <img src="screenshot5.png" alt="Edit Profile" loading="lazy">
+            <img src="screenshot1.png" alt="Quantum Button screenshot 1" loading="lazy">
+            <img src="screenshot2.png" alt="Quantum Button screenshot 2" loading="lazy">
+            <img src="screenshot3.png" alt="Quantum Button screenshot 3" loading="lazy">
+            <img src="screenshot4.png" alt="Quantum Button screenshot 4" loading="lazy">
+            <img src="screenshot5.png" alt="Quantum Button screenshot 5" loading="lazy">
+            <img src="screenshot6.png" alt="Quantum Button screenshot 6" loading="lazy">
+            <img src="screenshot7.png" alt="Quantum Button screenshot 7" loading="lazy">
+            <img src="screenshot8.png" alt="Quantum Button screenshot 8" loading="lazy">
         </div>
     </section>
 
