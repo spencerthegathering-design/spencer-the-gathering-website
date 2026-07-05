@@ -191,8 +191,18 @@
         .bppcp-chip{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:1px;text-transform:uppercase;padding:.35rem .8rem;border-radius:100px;border:1px solid rgba(62,240,160,.25);color:#8fe9c4;background:rgba(34,255,34,.04)}
         .bppcp-actions{display:flex;flex-direction:column;gap:.7rem;flex-shrink:0}
         .bppcp-soon{font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#04140c;background:linear-gradient(135deg,#3ef0a0,#00f3ff);padding:.85rem 1.6rem;border-radius:100px;text-align:center;white-space:nowrap}
-        .bppcp-notify{font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8fe9c4;text-decoration:none;text-align:center;padding:.7rem 1.6rem;border:1px solid rgba(62,240,160,.3);border-radius:100px;transition:all .25s;white-space:nowrap}
-        .bppcp-notify:hover{background:rgba(62,240,160,.1);color:#bff7de;border-color:rgba(62,240,160,.6)}
+        .notify-form{display:flex;flex-direction:column;gap:.4rem;min-width:220px}
+        .notify-row{display:flex;gap:.4rem}
+        .notify-row input[type=email]{flex:1;min-width:0;padding:.7rem .9rem;border-radius:100px;background:rgba(0,0,0,.3);border:1px solid rgba(62,240,160,.3);color:#fff;font-family:'Space Mono',monospace;font-size:.78rem;transition:all .25s}
+        .notify-row input[type=email]::placeholder{color:rgba(143,233,196,.5)}
+        .notify-row input[type=email]:focus{outline:none;border-color:#3ef0a0;box-shadow:0 0 16px rgba(62,240,160,.2);background:rgba(0,0,0,.45)}
+        .notify-row button{flex-shrink:0;width:44px;border:none;border-radius:100px;background:linear-gradient(135deg,#3ef0a0,#00f3ff);color:#04140c;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;transition:all .25s}
+        .notify-row button:hover:not(:disabled){transform:translateX(2px);box-shadow:0 0 18px rgba(62,240,160,.35)}
+        .notify-row button:disabled{opacity:.5}
+        .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+        .notify-msg{font-size:.62rem;letter-spacing:.3px;line-height:1.4;margin:0;min-height:1em;color:var(--text-dim)}
+        .notify-msg.ok{color:#5ef2b0}
+        .notify-msg.err{color:#ff8080}
         @media (max-width:860px){
             .bppcp-spotlight{grid-template-columns:1fr;text-align:center;padding:2rem 1.4rem;gap:1.4rem}
             .bppcp-tile{margin:0 auto}
@@ -205,6 +215,8 @@
             .announce-short{display:inline}
             .announce-text{font-size:.66rem}
             .bppcp-actions{flex-direction:column}
+            .notify-form{min-width:0;width:100%}
+            .bppcp-soon{width:100%}
         }
 
         /* ============= SCREENSHOTS PEEK ============= */
@@ -535,7 +547,14 @@
             </div>
             <div class="bppcp-actions">
                 <span class="bppcp-soon">Coming Soon</span>
-                <a class="bppcp-notify" href="mailto:Spencerthegathering@gmail.com?subject=Best%20Price%20PC%20Parts%20%E2%80%94%20notify%20me">Get Notified →</a>
+                <form class="notify-form" data-source="bppcp" novalidate>
+                    <div class="notify-row">
+                        <input type="email" name="email" placeholder="Email me at launch" required autocomplete="email" aria-label="Your email address">
+                        <button type="submit" aria-label="Notify me at launch">→</button>
+                    </div>
+                    <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <p class="notify-msg" role="status" aria-live="polite"></p>
+                </form>
             </div>
         </article>
 
@@ -841,6 +860,55 @@
                 nav.classList.remove('open');
                 btn.setAttribute('aria-expanded', 'false');
             });
+        });
+    })();
+
+    // Notify / waitlist capture — posts to the /api/notify Pages Function
+    (function(){
+        function setMsg(form, text, ok){
+            var m = form.querySelector('.notify-msg');
+            if(!m) return;
+            m.textContent = text;
+            m.className = 'notify-msg ' + (ok ? 'ok' : 'err');
+        }
+        document.addEventListener('submit', function(e){
+            var form = e.target.closest ? e.target.closest('.notify-form') : null;
+            if(!form) return;
+            e.preventDefault();
+
+            var hp = form.querySelector('.hp');
+            if(hp && hp.value) return; // honeypot tripped — ignore silently
+
+            var input = form.querySelector('input[name=email]');
+            var email = (input && input.value || '').trim();
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+                setMsg(form, 'Enter a valid email address.', false);
+                return;
+            }
+
+            var btn = form.querySelector('button[type=submit]');
+            var source = form.getAttribute('data-source') || 'website';
+            if(btn) btn.disabled = true;
+            setMsg(form, 'Sending…', true);
+
+            fetch('/api/notify', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ email: email, source: source })
+            })
+            .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
+            .then(function(res){
+                if(res && res.ok){
+                    setMsg(form, "You're on the list — we'll email you at launch.", true);
+                    form.reset();
+                } else {
+                    setMsg(form, (res && res.error) || 'Something went wrong. Please email us directly.', false);
+                }
+            })
+            .catch(function(){
+                setMsg(form, 'Network error — please try again, or email us directly.', false);
+            })
+            .finally(function(){ if(btn) btn.disabled = false; });
         });
     })();
 </script>
