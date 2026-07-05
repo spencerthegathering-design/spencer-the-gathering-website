@@ -58,7 +58,7 @@
         nav{width:100%;max-width:1200px;margin:0 auto;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
         .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase;flex-shrink:0}
         .logo-spencer{color:var(--neon-blue)}.logo-the{color:rgba(255,255,255,.25);font-weight:400;font-size:.85rem}.logo-gathering{color:var(--neon-pink)}
-        .nav-links{display:flex;gap:2rem;align-items:center}
+        .nav-links{display:flex;gap:1.5rem;align-items:center}
         .nav-links a{color:var(--text-dim);text-decoration:none;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;transition:all .3s;position:relative}
         .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--neon-blue);box-shadow:0 0 8px var(--neon-blue);transition:width .3s}
         .nav-links a:hover{color:var(--neon-blue)}.nav-links a:hover::after{width:100%}
@@ -162,6 +162,50 @@
         .btn-view.btn-purple:hover{background:var(--neon-purple);color:#000;box-shadow:0 0 24px rgba(155,92,255,.35)}
         .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;color:var(--text-dim);font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:color .25s}
         .btn-ghost:hover{color:var(--text-bright)}
+
+        /* ===== TOP ANNOUNCEMENT BAR (Best Price PC Parts) ===== */
+        .announce-bar{display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap;text-decoration:none;padding:.6rem 1.2rem;background:linear-gradient(90deg,rgba(34,255,34,.06),rgba(0,243,255,.06));border-bottom:1px solid rgba(62,240,160,.22);font-family:'Space Mono',monospace;transition:background .3s;position:relative;z-index:101}
+        .announce-bar:hover{background:linear-gradient(90deg,rgba(34,255,34,.12),rgba(0,243,255,.12))}
+        .announce-pill{font-family:'Orbitron',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#04140c;background:linear-gradient(135deg,#3ef0a0,#00f3ff);padding:.28rem .75rem;border-radius:100px;flex-shrink:0}
+        .announce-text{font-size:.72rem;letter-spacing:.4px;color:var(--text-body)}
+        .announce-text strong{color:#5ef2b0;font-weight:700}
+        .announce-short{display:none}
+        .announce-arrow{color:#5ef2b0;font-weight:700;transition:transform .3s}
+        .announce-bar:hover .announce-arrow{transform:translateX(4px)}
+
+        /* ===== BEST PRICE PC PARTS — COMING SOON SPOTLIGHT ===== */
+        .bppcp-spotlight{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;background:linear-gradient(135deg,rgba(34,255,34,.05),rgba(0,243,255,.04)),#060f0b;border:1px solid rgba(62,240,160,.3);border-radius:24px;padding:2.2rem 2.4rem;margin-bottom:4rem;position:relative;overflow:hidden;transition:all .4s}
+        .bppcp-spotlight::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 12% 20%,rgba(62,240,160,.12),transparent 45%);pointer-events:none}
+        .bppcp-spotlight:hover{border-color:rgba(62,240,160,.55);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 60px rgba(34,255,34,.08)}
+        .bppcp-tile{width:120px;height:120px;border-radius:24px;background:linear-gradient(160deg,#0a1a12,#071410);border:1px solid rgba(62,240,160,.35);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0;box-shadow:0 0 40px rgba(34,255,34,.12)}
+        .bppcp-tile .mon{font-size:3.2rem;line-height:1}
+        .bppcp-tile .tag{position:absolute;bottom:-10px;right:-10px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:.9rem;color:#04140c;background:linear-gradient(135deg,#3ef0a0,#00f3ff);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+        .bppcp-body{position:relative}
+        .bppcp-eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:#5ef2b0;margin-bottom:.7rem}
+        .bppcp-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#3ef0a0;box-shadow:0 0 8px #3ef0a0;animation:hero-pulse 1.8s ease-in-out infinite}
+        .bppcp-body h3{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:1px;margin-bottom:.4rem;line-height:1}
+        .bppcp-body h3 .g{background:linear-gradient(135deg,#3ef0a0,#00f3ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+        .bppcp-tagline{color:#8fe9c4;font-size:.9rem;font-weight:700;margin-bottom:.7rem}
+        .bppcp-body p{color:var(--text-body);font-size:.9rem;line-height:1.7;max-width:580px;margin-bottom:1rem}
+        .bppcp-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+        .bppcp-chip{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:1px;text-transform:uppercase;padding:.35rem .8rem;border-radius:100px;border:1px solid rgba(62,240,160,.25);color:#8fe9c4;background:rgba(34,255,34,.04)}
+        .bppcp-actions{display:flex;flex-direction:column;gap:.7rem;flex-shrink:0}
+        .bppcp-soon{font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#04140c;background:linear-gradient(135deg,#3ef0a0,#00f3ff);padding:.85rem 1.6rem;border-radius:100px;text-align:center;white-space:nowrap}
+        .bppcp-notify{font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8fe9c4;text-decoration:none;text-align:center;padding:.7rem 1.6rem;border:1px solid rgba(62,240,160,.3);border-radius:100px;transition:all .25s;white-space:nowrap}
+        .bppcp-notify:hover{background:rgba(62,240,160,.1);color:#bff7de;border-color:rgba(62,240,160,.6)}
+        @media (max-width:860px){
+            .bppcp-spotlight{grid-template-columns:1fr;text-align:center;padding:2rem 1.4rem;gap:1.4rem}
+            .bppcp-tile{margin:0 auto}
+            .bppcp-body p{margin-left:auto;margin-right:auto}
+            .bppcp-chips{justify-content:center}
+            .bppcp-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
+        }
+        @media (max-width:560px){
+            .announce-full{display:none}
+            .announce-short{display:inline}
+            .announce-text{font-size:.66rem}
+            .bppcp-actions{flex-direction:column}
+        }
 
         /* ============= SCREENSHOTS PEEK ============= */
         .peek{padding:5rem 2rem;max-width:1300px;margin:0 auto;text-align:center;overflow:hidden}
@@ -367,6 +411,13 @@
 
 <div class="content">
 
+    <a class="announce-bar" href="#bppcp">
+        <span class="announce-pill">Coming Soon</span>
+        <span class="announce-text announce-full"><strong>Best Price PC Parts</strong> — live Australian PC-part prices. Shop by spec, not by guessing.</span>
+        <span class="announce-text announce-short"><strong>Best Price PC Parts</strong> — coming soon</span>
+        <span class="announce-arrow">→</span>
+    </a>
+
     <div class="nav-wrap">
         <nav>
             <a href="index.html" class="logo">
@@ -374,6 +425,7 @@
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#projects">Projects</a>
+                <a href="#bppcp">PC Parts</a>
                 <a href="#pillars">Why</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="#squad">The Squad</a>
@@ -463,6 +515,30 @@
 
     <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="projects-wrap">
+
+        <!-- BEST PRICE PC PARTS — COMING SOON SPOTLIGHT -->
+        <article id="bppcp" class="bppcp-spotlight">
+            <div class="bppcp-tile">
+                <span class="mon">🖥️</span>
+                <span class="tag">$</span>
+            </div>
+            <div class="bppcp-body">
+                <div class="bppcp-eyebrow"><span class="dot"></span>Newest Project · Coming Soon</div>
+                <h3>Best Price <span class="g">PC Parts.</span></h3>
+                <div class="bppcp-tagline">Shop by spec, not by guessing — live Australian prices.</div>
+                <p>A price-comparison engine for Australian PC builders that actually understands the part. Filter by the specs that matter, compare live prices across every major retailer, and land on the cheapest option without twelve tabs open. A new project from Spencer The Gathering.</p>
+                <div class="bppcp-chips">
+                    <span class="bppcp-chip">Live AU Prices</span>
+                    <span class="bppcp-chip">Search By Spec</span>
+                    <span class="bppcp-chip">Every Major Retailer</span>
+                </div>
+            </div>
+            <div class="bppcp-actions">
+                <span class="bppcp-soon">Coming Soon</span>
+                <a class="bppcp-notify" href="mailto:Spencerthegathering@gmail.com?subject=Best%20Price%20PC%20Parts%20%E2%80%94%20notify%20me">Get Notified →</a>
+            </div>
+        </article>
+
         <div class="section-eyebrow">// IN BUILD</div>
         <h2 class="section-title">Two Apps. <span class="gtext-gold">Opposite Tactics.</span></h2>
         <p class="section-subtitle"><strong>Quantum Button</strong> is fast, loud, and best played across a kitchen table from someone you can taunt. <strong>Achievo</strong> is the slow burn — daily quests, real streaks, and a feed you're meant to close. Same studio. Same mission. Wildly different methods.</p>
@@ -719,9 +795,10 @@
                 </div>
             </div>
             <div class="footer-col">
-                <h5>Games</h5>
+                <h5>Projects</h5>
                 <a href="quantum.html">Quantum Button</a>
                 <a href="achievo.html">Achievo</a>
+                <a href="#bppcp">Best Price PC Parts</a>
                 <a href="waitlistq.html?from=home">Quantum Waitlist</a>
                 <a href="waitlist.html?from=home">Achievo Waitlist</a>
             </div>
