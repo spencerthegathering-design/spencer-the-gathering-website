@@ -27,7 +27,6 @@
         .content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column}
 
         /* NAV */
-        nav-wrap{display:block}
         .nav-wrap{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(5,8,26,.6);border-bottom:1px solid var(--glass-border)}
         nav{max-width:1200px;margin:0 auto;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
         .logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase}
@@ -58,7 +57,11 @@
         button[type=submit]{margin-top:.6rem;padding:1.15rem 1.5rem;background:linear-gradient(135deg,var(--neon-blue),var(--neon-pink));color:#000;font-weight:900;font-family:'Orbitron',sans-serif;font-size:.9rem;letter-spacing:3px;border-radius:100px;border:none;text-transform:uppercase;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 0 30px rgba(0,243,255,.2)}
         button[type=submit]:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 50px rgba(0,243,255,.4),0 0 80px rgba(255,0,153,.15)}
 
-        .success{display:none;margin-top:1.4rem;padding:1rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);border-radius:12px;color:var(--neon-gold);font-size:.88rem;line-height:1.6;position:relative}
+        .formmsg{margin-top:1.4rem;padding:1rem;border-radius:12px;font-size:.88rem;line-height:1.6;position:relative}
+        .formmsg a{color:inherit;text-decoration:underline}
+        .formmsg.success{background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);color:var(--neon-gold)}
+        .formmsg.error{background:rgba(255,60,90,.08);border:1px solid rgba(255,60,90,.35);color:#ff9db0}
+        button[type=submit][disabled]{opacity:.6;transform:none;box-shadow:none;cursor:progress}
 
         .perks{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);position:relative}
         .perks-title{font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
@@ -104,20 +107,20 @@
             <h1>Be On The Board <span class="gtext">Before Launch.</span></h1>
             <p class="lede">Beta invites go out in the order you joined. The earlier your name lands on the list, the earlier you're tapping — and the earlier you're climbing the global leaderboard. <strong>Free, no spam, unsubscribe any time.</strong></p>
 
-            <form action="mailto:Spencerthegathering@gmail.com" method="post" enctype="text/plain" onsubmit="document.getElementById('success').style.display='block';return true;">
+            <form id="waitlistForm" novalidate>
                 <label for="name">Your name</label>
-                <input id="name" type="text" name="Name" placeholder="What should we call you?" required autocomplete="name">
+                <input id="name" type="text" name="name" placeholder="What should we call you?" required autocomplete="name">
 
                 <label for="email">Email address</label>
-                <input id="email" type="email" name="Email" placeholder="you@example.com" required autocomplete="email">
+                <input id="email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
 
                 <label for="msg">Anything you want to add? <span style="opacity:.5;text-transform:none;letter-spacing:0">(optional)</span></label>
-                <textarea id="msg" name="Message" rows="3" placeholder="Why you're interested, what you'd want from a tap fighter, anything."></textarea>
+                <textarea id="msg" name="message" rows="3" placeholder="Why you're interested, what you'd want from a tap fighter, anything."></textarea>
 
-                <button type="submit">Sign Me Up</button>
+                <button type="submit" id="submitBtn">Sign Me Up</button>
             </form>
 
-            <p id="success" class="success">✅ You're on the list. Your details have been sent to spencerthegathering@gmail.com. We'll be in touch when beta invites go out.</p>
+            <p id="formStatus" class="formmsg" role="status" aria-live="polite" hidden></p>
 
             <div class="perks">
                 <div class="perks-title">// What waitlisters get</div>
@@ -144,6 +147,72 @@
     </footer>
 
 </div>
+
+<script>
+    // ============================================================
+    //  WAITLIST SIGNUP — Quantum Button
+    //  Paste your form endpoint below (see SETUP-WAITLIST.md).
+    //  Recommended: a Formspree URL, e.g. https://formspree.io/f/abcdwxyz
+    //  Until it is set, the form stays HONEST: it never fakes success —
+    //  it asks people to email us so nobody is silently dropped.
+    // ============================================================
+    var WAITLIST_ENDPOINT = "";                          // <-- paste endpoint here
+    var CONTACT_EMAIL     = "spencerthegathering@gmail.com";
+    var PRODUCT           = "Quantum Button";
+
+    (function(){
+        var form   = document.getElementById('waitlistForm');
+        var btn    = document.getElementById('submitBtn');
+        var status = document.getElementById('formStatus');
+        if(!form) return;
+
+        function show(kind, html){
+            status.className = 'formmsg ' + kind;
+            status.innerHTML = html;
+            status.hidden = false;
+        }
+        function mailtoLink(){
+            return '<a href="mailto:' + CONTACT_EMAIL + '?subject=Waitlist%20' + encodeURIComponent(PRODUCT) + '">' + CONTACT_EMAIL + '</a>';
+        }
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(!form.checkValidity()){ form.reportValidity(); return; }
+
+            var data = {
+                name:    form.elements['name'].value.trim(),
+                email:   form.elements['email'].value.trim(),
+                message: form.elements['message'].value.trim(),
+                product: PRODUCT,
+                source:  new URLSearchParams(location.search).get('from') || document.referrer || 'direct'
+            };
+
+            if(!WAITLIST_ENDPOINT){
+                show('error', "Signups are moving to a new system and are off for a moment. Email " + mailtoLink() + " and we'll add you by hand — you won't miss out.");
+                return;
+            }
+
+            var original = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            fetch(WAITLIST_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(function(res){
+                if(!res.ok) throw new Error('HTTP ' + res.status);
+                form.reset();
+                btn.textContent = 'Done ✓';
+                show('success', "✅ You're on the list. We'll email you the moment beta invites open — no spam, unsubscribe any time.");
+            }).catch(function(){
+                btn.disabled = false;
+                btn.textContent = original;
+                show('error', "That didn't save — check your connection and try again, or email " + mailtoLink() + ".");
+            });
+        });
+    })();
+</script>
 
 <script>
     // Smart back-link: detect where the user came from
