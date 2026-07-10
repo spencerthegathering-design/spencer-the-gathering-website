@@ -54,7 +54,7 @@
 
         p.lede{color:var(--text-body);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
 
-        .options{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+        .options{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem}
         .opt{background:var(--glass-bg);border:1px solid var(--glass-border-hi);border-radius:14px;padding:1.4rem 1rem;text-decoration:none;transition:all .3s;display:block}
         .opt:hover{transform:translateY(-4px);border-color:var(--neon-blue);box-shadow:0 0 30px rgba(0,243,255,.12)}
         .opt-icon{font-size:1.8rem;display:block;margin-bottom:.5rem;line-height:1}
@@ -118,6 +118,11 @@
                     <div class="opt-label">Achievo</div>
                     <div class="opt-sub">The social app</div>
                 </a>
+                <a href="pcparts.html" class="opt">
+                    <span class="opt-icon">🖥️</span>
+                    <div class="opt-label">PC Parts</div>
+                    <div class="opt-sub">Price comparison</div>
+                </a>
             </div>
 
             <a href="index.html" class="btn-home">↻ Return Home</a>
@@ -129,6 +134,7 @@
             <a href="index.html">Home</a>
             <a href="quantum.html">Quantum</a>
             <a href="achievo.html">Achievo</a>
+            <a href="pcparts.html">PC Parts</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
             <a href="mailto:Spencerthegathering@gmail.com">Contact</a>

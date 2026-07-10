@@ -191,6 +191,10 @@
         .bppcp-chip{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:1px;text-transform:uppercase;padding:.35rem .8rem;border-radius:100px;border:1px solid rgba(62,240,160,.25);color:#8fe9c4;background:rgba(34,255,34,.04)}
         .bppcp-actions{display:flex;flex-direction:column;gap:.7rem;flex-shrink:0}
         .bppcp-soon{font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#04140c;background:linear-gradient(135deg,#3ef0a0,#00f3ff);padding:.85rem 1.6rem;border-radius:100px;text-align:center;white-space:nowrap}
+        .bppcp-explore{font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#04140c;background:linear-gradient(135deg,#3ef0a0,#00f3ff);padding:.95rem 1.7rem;border-radius:100px;text-decoration:none;text-align:center;white-space:nowrap;transition:all .25s}
+        .bppcp-explore:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(62,240,160,.4)}
+        .bppcp-note-link{font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8fe9c4;text-decoration:none;text-align:center;transition:color .25s}
+        .bppcp-note-link:hover{color:#bff7de}
         .notify-form{display:flex;flex-direction:column;gap:.4rem;min-width:220px}
         .notify-row{display:flex;gap:.4rem}
         .notify-row input[type=email]{flex:1;min-width:0;padding:.7rem .9rem;border-radius:100px;background:rgba(0,0,0,.3);border:1px solid rgba(62,240,160,.3);color:#fff;font-family:'Space Mono',monospace;font-size:.78rem;transition:all .25s}
@@ -423,7 +427,7 @@
 
 <div class="content">
 
-    <a class="announce-bar" href="#bppcp">
+    <a class="announce-bar" href="pcparts.html">
         <span class="announce-pill">Coming Soon</span>
         <span class="announce-text announce-full"><strong>Best Price PC Parts</strong> — live Australian PC-part prices. Shop by spec, not by guessing.</span>
         <span class="announce-text announce-short"><strong>Best Price PC Parts</strong> — coming soon</span>
@@ -437,7 +441,7 @@
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#projects">Projects</a>
-                <a href="#bppcp">PC Parts</a>
+                <a href="pcparts.html">PC Parts</a>
                 <a href="#pillars">Why</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="#squad">The Squad</a>
@@ -546,15 +550,8 @@
                 </div>
             </div>
             <div class="bppcp-actions">
-                <span class="bppcp-soon">Coming Soon</span>
-                <form class="notify-form" data-source="bppcp" novalidate>
-                    <div class="notify-row">
-                        <input type="email" name="email" placeholder="Email me at launch" required autocomplete="email" aria-label="Your email address">
-                        <button type="submit" aria-label="Notify me at launch">→</button>
-                    </div>
-                    <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <p class="notify-msg" role="status" aria-live="polite"></p>
-                </form>
+                <a class="bppcp-explore" href="pcparts.html">Explore The Project →</a>
+                <a class="bppcp-note-link" href="pcparts.html#notify">Get the launch email →</a>
             </div>
         </article>
 
@@ -817,7 +814,7 @@
                 <h5>Projects</h5>
                 <a href="quantum.html">Quantum Button</a>
                 <a href="achievo.html">Achievo</a>
-                <a href="#bppcp">Best Price PC Parts</a>
+                <a href="pcparts.html">Best Price PC Parts</a>
                 <a href="waitlistq.html?from=home">Quantum Waitlist</a>
                 <a href="waitlist.html?from=home">Achievo Waitlist</a>
             </div>
