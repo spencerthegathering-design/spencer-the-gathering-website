@@ -59,6 +59,10 @@
         button[type=submit]:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 50px rgba(0,243,255,.4),0 0 80px rgba(255,0,153,.15)}
 
         .success{display:none;margin-top:1.4rem;padding:1rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);border-radius:12px;color:var(--neon-gold);font-size:.88rem;line-height:1.6;position:relative}
+        .success.pending{background:rgba(255,255,255,.04);border-color:var(--glass-border-hi);color:var(--text-dim)}
+        .success.err{background:rgba(255,80,80,.08);border-color:rgba(255,80,80,.35);color:#ff9090}
+        .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+        button[type=submit]:disabled{opacity:.5}
 
         .perks{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);position:relative}
         .perks-title{font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
@@ -104,7 +108,7 @@
             <h1>Be On The Board <span class="gtext">Before Launch.</span></h1>
             <p class="lede">Beta invites go out in the order you joined. The earlier your name lands on the list, the earlier you're tapping — and the earlier you're climbing the global leaderboard. <strong>Free, no spam, unsubscribe any time.</strong></p>
 
-            <form action="mailto:Spencerthegathering@gmail.com" method="post" enctype="text/plain" onsubmit="document.getElementById('success').style.display='block';return true;">
+            <form class="wl-form" data-source="quantum" novalidate>
                 <label for="name">Your name</label>
                 <input id="name" type="text" name="Name" placeholder="What should we call you?" required autocomplete="name">
 
@@ -114,6 +118,7 @@
                 <label for="msg">Anything you want to add? <span style="opacity:.5;text-transform:none;letter-spacing:0">(optional)</span></label>
                 <textarea id="msg" name="Message" rows="3" placeholder="Why you're interested, what you'd want from a tap fighter, anything."></textarea>
 
+                <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit">Sign Me Up</button>
             </form>
 
@@ -175,6 +180,51 @@
 
         back.href = target;
         back.textContent = label;
+    })();
+
+    // Waitlist capture — posts to the /api/notify Pages Function
+    (function(){
+        var form = document.querySelector('.wl-form');
+        if(!form) return;
+        var box = document.getElementById('success');
+        function msg(text, state){
+            if(!box) return;
+            box.textContent = text;
+            box.className = 'success ' + state;
+            box.style.display = 'block';
+        }
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var hp = form.querySelector('.hp');
+            if(hp && hp.value) return;
+            var nameEl = form.querySelector('input[name=Name]');
+            var emailEl = form.querySelector('input[name=Email]');
+            var msgEl = form.querySelector('textarea[name=Message]');
+            var name = (nameEl && nameEl.value || '').trim();
+            var email = (emailEl && emailEl.value || '').trim();
+            var message = (msgEl && msgEl.value || '').trim();
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ msg('Please enter a valid email address.', 'err'); return; }
+            var btn = form.querySelector('button[type=submit]');
+            var source = form.getAttribute('data-source') || 'waitlist';
+            if(btn) btn.disabled = true;
+            msg('Sending…', 'pending');
+            fetch('/api/notify', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ name: name, email: email, message: message, source: source })
+            })
+            .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
+            .then(function(res){
+                if(res && res.ok){
+                    msg("You're on the list. We'll be in touch when beta invites go out.", 'ok');
+                    form.reset();
+                } else {
+                    msg((res && res.error) || 'Something went wrong. Please email us directly.', 'err');
+                }
+            })
+            .catch(function(){ msg('Network error — please try again, or email us directly.', 'err'); })
+            .finally(function(){ if(btn) btn.disabled = false; });
+        });
     })();
 </script>
 </body>
