@@ -295,7 +295,7 @@
             You already know the part you want. The only real question is <em>where it's cheapest right now</em> — and that shouldn't take twelve browser tabs and a spreadsheet.
         </p>
         <p class="manifesto-body">
-            Most price-comparison sites match on a product name and hope for the best. Best Price PC Parts is built on a proper spec catalogue — brand, model, MPN, GTIN, even dimensions and weight — so it actually understands what a part <em>is</em>. That means the RTX 4070 you're looking at is matched accurately across every retailer, not confused with a different SKU that happens to share three words in its title. You search by spec, you get the real cheapest price, and you get it in Australian dollars with Australian stock.
+            Most price-comparison sites match on a product name and hope for the best. I'm building this one on a proper spec catalogue — brand, model, MPN, GTIN, even dimensions and weight — so it actually understands what a part <em>is</em>. That means the RTX 4070 you're looking at is matched accurately across every retailer, not confused with a different SKU that happens to share three words in its title. You search by spec, you get the real cheapest price, and you get it in Australian dollars with Australian stock.
         </p>
     </section>
 
@@ -375,7 +375,7 @@
                 <div class="step-num">4</div>
                 <div class="step-content">
                     <h4>Buy Direct From The Shop</h4>
-                    <p>Click through and buy from the retailer itself. We don't sit in the middle of your checkout — we just point you at the best deal and get out of the way.</p>
+                    <p>Click through and buy from the retailer itself. I don't sit in the middle of your checkout — I just point you at the best deal and get out of the way.</p>
                 </div>
             </div>
         </div>
@@ -418,7 +418,7 @@
                 <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <p class="notify-msg" role="status" aria-live="polite"></p>
             </form>
-            <p class="notify-fine">Free to join. Unsubscribe any time. We never sell your details.</p>
+            <p class="notify-fine">Free to join. Unsubscribe any time. I never sell your details.</p>
         </div>
     </section>
 
@@ -436,7 +436,7 @@
         </details>
         <details class="faq-item">
             <summary>Will it be free to use?</summary>
-            <div class="faq-body">Yes. Searching for parts and comparing prices is free. You buy from the retailer directly at their price — we're the map, not the shop.</div>
+            <div class="faq-body">Yes. Searching for parts and comparing prices is free. You buy from the retailer directly at their price — I'm the map, not the shop.</div>
         </details>
         <details class="faq-item">
             <summary>Is it Australia-only?</summary>
@@ -470,7 +470,7 @@
                 <a href="terms.html">Terms</a>
                 <a href="mailto:Spencerthegathering@gmail.com">Contact</a>
             </div>
-            <div class="footer-copy">© 2026 STG • Best Price PC Parts</div>
+            <div class="footer-copy">© 2026 Spencer The Gathering · ABN 74 259 868 396</div>
         </div>
     </footer>
 
@@ -526,14 +526,14 @@
             .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
             .then(function(res){
                 if(res && res.ok){
-                    setMsg(form, "You're on the list — we'll email you at launch.", true);
+                    setMsg(form, "You're on the list — I'll email you at launch.", true);
                     form.reset();
                 } else {
-                    setMsg(form, (res && res.error) || 'Something went wrong. Please email us directly.', false);
+                    setMsg(form, (res && res.error) || 'Something went wrong. Please email me directly.', false);
                 }
             })
             .catch(function(){
-                setMsg(form, 'Network error — please try again, or email us directly.', false);
+                setMsg(form, 'Network error — please try again, or email me directly.', false);
             })
             .finally(function(){ if(btn) btn.disabled = false; });
         });

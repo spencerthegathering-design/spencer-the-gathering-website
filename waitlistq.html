@@ -110,7 +110,7 @@
 
             <form class="wl-form" data-source="quantum" novalidate>
                 <label for="name">Your name</label>
-                <input id="name" type="text" name="Name" placeholder="What should we call you?" required autocomplete="name">
+                <input id="name" type="text" name="Name" placeholder="What should I call you?" required autocomplete="name">
 
                 <label for="email">Email address</label>
                 <input id="email" type="email" name="Email" placeholder="you@example.com" required autocomplete="email">
@@ -145,7 +145,7 @@
             <a href="terms.html">Terms</a>
             <a href="mailto:Spencerthegathering@gmail.com">Contact</a>
         </div>
-        <div class="footer-copy">© 2026 Spencer The Gathering • Quantum Button v2.0</div>
+        <div class="footer-copy">© 2026 Spencer The Gathering · ABN 74 259 868 396</div>
     </footer>
 
 </div>
@@ -216,13 +216,13 @@
             .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
             .then(function(res){
                 if(res && res.ok){
-                    msg("You're on the list. We'll be in touch when beta invites go out.", 'ok');
+                    msg("You're on the list. I'll be in touch when beta invites go out.", 'ok');
                     form.reset();
                 } else {
-                    msg((res && res.error) || 'Something went wrong. Please email us directly.', 'err');
+                    msg((res && res.error) || 'Something went wrong. Please email me directly.', 'err');
                 }
             })
-            .catch(function(){ msg('Network error — please try again, or email us directly.', 'err'); })
+            .catch(function(){ msg('Network error — please try again, or email me directly.', 'err'); })
             .finally(function(){ if(btn) btn.disabled = false; });
         });
     })();
