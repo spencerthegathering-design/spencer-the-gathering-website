@@ -1,0 +1,6 @@
+/* Self-hosted fonts — served from this domain, no third-party calls.
+   Orbitron is a variable font (covers 400–900). Space Mono ships 400 + 700.
+   Latin subset; other glyphs fall back to the system font. */
+@font-face{font-family:'Orbitron';font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/orbitron.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/spacemono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/spacemono-700.woff2) format('woff2')}
