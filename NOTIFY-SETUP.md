@@ -21,7 +21,7 @@ temporarily unavailable — please email us directly"* message.
 2. Add:
    - `RESEND_API_KEY` = *the key from step 1* (mark it as a **Secret**)
 3. Optional overrides:
-   - `NOTIFY_TO` = `spencerthegathering@gmail.com` *(default; comma-separate for
+   - `NOTIFY_TO` = `hello@spencer-the-gathering.com` *(default; comma-separate for
      several recipients, e.g. add `sales@computeralliance.com.au`)*
    - `NOTIFY_FROM` = `Spencer The Gathering <notify@spencer-the-gathering.com>`
      *(default; the address must be on the verified domain)*

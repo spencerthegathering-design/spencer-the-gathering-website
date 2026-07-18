@@ -4,7 +4,7 @@
 // Required Cloudflare Pages env var (Settings -> Environment variables):
 //   RESEND_API_KEY   – your Resend API key (secret)
 // Optional:
-//   NOTIFY_TO        – comma-separated recipients (default: spencerthegathering@gmail.com)
+//   NOTIFY_TO        – comma-separated recipients (default: hello@spencer-the-gathering.com)
 //   NOTIFY_FROM      – verified sender (default: Spencer The Gathering <notify@spencer-the-gathering.com>)
 
 export async function onRequestPost({ request, env }) {
@@ -49,7 +49,7 @@ export async function onRequestPost({ request, env }) {
     );
   }
 
-  const to = (env.NOTIFY_TO || 'spencerthegathering@gmail.com')
+  const to = (env.NOTIFY_TO || 'hello@spencer-the-gathering.com')
     .split(',').map((s) => s.trim()).filter(Boolean);
   const from = env.NOTIFY_FROM || 'Spencer The Gathering <notify@spencer-the-gathering.com>';
 
