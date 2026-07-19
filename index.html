@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-4011788677979740">
-    <title>Spencer The Gathering | An Indie Game & Social App Studio</title>
-    <meta name="description" content="Spencer The Gathering is an independent studio building Quantum Button (live 1v1 PvP video tap battles) and Achievo (the social app that makes you take breaks). Built by humans, fuelled by a 13-strong squad of dogs.">
+    <title>Quantum Button — Launching This Week | Spencer The Gathering</title>
+    <meta name="description" content="Quantum Button is a one-button duel with a live video link to your opponent — sixty seconds, real faces, no mercy. The flagship from Spencer The Gathering, an indie games studio out of Brisbane. Launching this week on iOS & Android.">
     <meta name="author" content="Spencer The Gathering">
     <meta name="theme-color" content="#05081a">
-    <meta property="og:title" content="Spencer The Gathering — An Indie Game & Social App Studio">
-    <meta property="og:description" content="Home of Quantum Button and Achievo. We build addictive, human, joyful software — one fry at a time.">
+    <meta property="og:title" content="Quantum Button — Launching This Week">
+    <meta property="og:description" content="A one-button duel, face to face over live video. Sixty seconds, five modes, no mercy. The flagship from Spencer The Gathering — launching this week.">
     <meta property="og:image" content="https://spencer-the-gathering.com/spencer-logo.png">
     <meta property="og:url" content="https://spencer-the-gathering.com">
     <meta property="og:type" content="website">
@@ -83,7 +83,7 @@
         @keyframes dog-blink{0%,90%,100%{opacity:0;transform:scaleY(0)}93%,97%{opacity:1;transform:scaleY(1)}}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
-        .hero h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(2.8rem,9vw,6.5rem);line-height:1.05;margin-bottom:1.25rem;letter-spacing:6px}
+        .hero h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(2.8rem,9vw,6.5rem);line-height:1.05;margin-bottom:1.25rem;letter-spacing:3px}
         .hero h1 .line1{display:block;color:rgba(255,255,255,.92)}
         .hero h1 .line2{display:block}
         .hero-sub{color:var(--text-body);font-size:clamp(1rem,2vw,1.25rem);max-width:680px;margin:0 auto 2.5rem;line-height:1.7}
@@ -117,7 +117,7 @@
         section{position:relative}
         .container{max-width:1200px;margin:0 auto;padding:6rem 2rem}
         .section-eyebrow{font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:5px;text-transform:uppercase;color:var(--neon-blue);text-align:center;margin-bottom:.8rem}
-        .section-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.6rem);text-align:center;margin-bottom:1rem;letter-spacing:3px;line-height:1.1}
+        .section-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.6rem);text-align:center;margin-bottom:1rem;letter-spacing:1.5px;line-height:1.1}
         .section-subtitle{text-align:center;color:var(--text-body);font-size:1rem;margin:0 auto 3.5rem;letter-spacing:.5px;max-width:680px;line-height:1.7}
 
         /* ============= MANIFESTO ============= */
@@ -163,6 +163,21 @@
         .btn-view.btn-purple:hover{background:var(--neon-purple);color:#000;box-shadow:0 0 24px rgba(155,92,255,.35)}
         .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;color:var(--text-dim);font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:color .25s}
         .btn-ghost:hover{color:var(--text-bright)}
+
+        /* ===== ALSO FROM THE STUDIO (demoted secondary projects) ===== */
+        .also-strip{max-width:1000px;margin:4.5rem auto 0;padding-top:3rem;border-top:1px solid var(--glass-border)}
+        .also-eyebrow{font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim);text-align:center;margin-bottom:1.5rem}
+        .also-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .also-card{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.4rem;background:var(--glass-bg);border:1px solid var(--glass-border-hi);border-radius:16px;text-decoration:none;transition:all .3s}
+        .also-card:hover{transform:translateY(-3px);background:var(--glass-bg-hi);border-color:rgba(255,255,255,.28)}
+        .also-logo{width:48px;height:48px;border-radius:12px;object-fit:cover;flex-shrink:0}
+        .also-tile{width:48px;height:48px;border-radius:12px;background:linear-gradient(160deg,#0a1a12,#071410);border:1px solid rgba(62,240,160,.3);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+        .also-text{flex:1;min-width:0}
+        .also-name{font-family:'Orbitron',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:1px;color:var(--text-bright);margin-bottom:.25rem}
+        .also-desc{font-size:.75rem;color:var(--text-dim);line-height:1.5}
+        .also-arrow{color:var(--text-dim);font-weight:700;transition:transform .3s;flex-shrink:0}
+        .also-card:hover .also-arrow{transform:translateX(3px);color:var(--text-body)}
+        @media (max-width:680px){.also-grid{grid-template-columns:1fr}}
 
         /* ===== TOP ANNOUNCEMENT BAR (Best Price PC Parts) ===== */
         .announce-bar{display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap;text-decoration:none;padding:.6rem 1.2rem;background:linear-gradient(90deg,rgba(34,255,34,.06),rgba(0,243,255,.06));border-bottom:1px solid rgba(62,240,160,.22);font-family:'Space Mono',monospace;transition:background .3s;position:relative;z-index:101}
@@ -430,27 +445,19 @@
 
 <div class="content">
 
-    <a class="announce-bar" href="pcparts.html">
-        <span class="announce-pill">Coming Soon</span>
-        <span class="announce-text announce-full"><strong>Best Price PC Parts</strong> — live Australian PC-part prices. Shop by spec, not by guessing.</span>
-        <span class="announce-text announce-short"><strong>Best Price PC Parts</strong> — coming soon</span>
-        <span class="announce-arrow">→</span>
-    </a>
-
     <div class="nav-wrap">
         <nav>
             <a href="index.html" class="logo">
                 <span class="logo-spencer">Spencer</span><span class="logo-the">the</span><span class="logo-gathering">Gathering</span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#projects">Projects</a>
-                <a href="pcparts.html">PC Parts</a>
-                <a href="#pillars">Why</a>
+                <a href="quantum.html">How It Plays</a>
+                <a href="#about">The Studio</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="#squad">The Squad</a>
                 <a href="#faq">FAQ</a>
                 <a href="https://www.youtube.com/@spencer.the.gathering.1" target="_blank" rel="noopener">YouTube</a>
-                <a href="waitlistq.html?from=home" class="nav-cta">Join Waitlist</a>
+                <a href="waitlistq.html?from=home" class="nav-cta">Get The Launch Link</a>
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">MENU</button>
         </nav>
@@ -460,7 +467,7 @@
     <section class="hero">
         <div class="hero-eyebrow">
             <span class="pulse"></span>
-            AN INDIE GAME &amp; APP STUDIO • BRISBANE • EST. 2025
+            QUANTUM BUTTON • LAUNCHING THIS WEEK
         </div>
 
         <div class="hero-logo-wrap">
@@ -470,47 +477,48 @@
         </div>
 
         <h1>
-            <span class="line1">WELCOME TO</span>
-            <span class="line2 gtext-gold">THE GATHERING</span>
+            <span class="line1">QUANTUM</span>
+            <span class="line2 gtext">BUTTON</span>
         </h1>
 
         <p class="hero-sub">
-            We're a small studio out of Brisbane — a few humans, thirteen cats and dogs, and a folder full of apps we actually want to exist. Right now we're building two of them. <strong>Quantum Button</strong> is a one-button duel where you stare your mate down over live video for sixty seconds — no mercy. <strong>Achievo</strong> is a social app that genuinely wants you to put your phone down. Quantum Button lands in 2026; Achievo follows in late 2027.
+            One button. Sixty seconds. A <strong>live video link straight to your opponent</strong> — you see their face the whole match, they see yours. Power items break the rules mid-round, five wild modes change the pace, and the leaderboard is global. It drops <strong>this week</strong>.<br><br>
+            The flagship from Spencer The Gathering — an indie studio out of Brisbane, building in public, thirteen cats and dogs strong.
         </p>
 
         <div class="hero-ctas">
-            <a href="#projects" class="btn-primary">SEE WHAT WE'RE BUILDING →</a>
-            <a href="waitlistq.html?from=home" class="btn-secondary">JOIN THE WAITLIST</a>
+            <a href="waitlistq.html?from=home" class="btn-primary">GET THE LAUNCH LINK →</a>
+            <a href="quantum.html" class="btn-secondary">HOW IT PLAYS</a>
         </div>
 
         <div class="hero-badges">
-            <span class="hero-badge"><span class="dot"></span>Quantum Button — Beta Soon</span>
-            <span class="hero-badge"><span class="dot gold"></span>Achievo — Coming 2027</span>
-            <span class="hero-badge"><span class="dot pink"></span>13 Squad Members</span>
+            <span class="hero-badge"><span class="dot gold"></span>Launching this week</span>
+            <span class="hero-badge"><span class="dot"></span>1v1 live-video duels</span>
+            <span class="hero-badge"><span class="dot pink"></span>Five wild modes</span>
             <span class="hero-badge"><span class="dot"></span>iOS &amp; Android</span>
         </div>
 
-        <div class="scroll-hint">Scroll To Enter</div>
+        <div class="scroll-hint">Scroll To See More</div>
     </section>
 
     <!-- ===================== STATS STRIP ===================== -->
     <div class="stats-strip">
         <div class="stats-row">
             <div class="stat">
-                <div class="stat-num">2</div>
-                <div class="stat-label">Worlds<br>In Build</div>
+                <div class="stat-num">5</div>
+                <div class="stat-label">Wild<br>Modes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Power<br>Items</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">P2P</div>
+                <div class="stat-label">Live<br>Video</div>
             </div>
             <div class="stat">
                 <div class="stat-num">13</div>
-                <div class="stat-label">Squad<br>Members</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num">5</div>
-                <div class="stat-label">Game<br>Modes</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num">∞</div>
-                <div class="stat-label">Taps<br>Inbound</div>
+                <div class="stat-label">Squad<br>Avatars</div>
             </div>
         </div>
     </div>
@@ -522,7 +530,7 @@
         <div class="section-eyebrow">// THE STUDIO</div>
         <h2 class="section-title">Stuff That <span class="gtext">Earns Its Place.</span></h2>
         <p class="manifesto-quote">
-            We measure success in the minutes you spend <em>off</em> your phone, not on it. A good round of Quantum Button's done in under a minute and leaves you grinning. A good day on Achievo ends with you logged off — and the run you promised yourself <em>actually</em> done.
+            We measure success in the minutes you spend <em>off</em> your phone, not on it. A good round of Quantum Button is done in under a minute, leaves you grinning, and hands you back to your life. That's the whole idea.
         </p>
         <p class="manifesto-body">
             Somewhere along the way, apps stopped being built for people and started being built to keep them scrolling. We got sick of it. So everything we make has one rule: it has to earn its place on your phone. No dark patterns, no tricks, no growth targets we've got to hit by Tuesday. There are no shareholders to keep happy and no roadmap we didn't write ourselves — just us, thirteen pets, and the next thing we're proud enough of to ship.
@@ -535,39 +543,16 @@
     <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="projects-wrap">
 
-        <!-- BEST PRICE PC PARTS — COMING SOON SPOTLIGHT -->
-        <article id="bppcp" class="bppcp-spotlight">
-            <div class="bppcp-tile">
-                <span class="mon">🖥️</span>
-                <span class="tag">$</span>
-            </div>
-            <div class="bppcp-body">
-                <div class="bppcp-eyebrow"><span class="dot"></span>Newest Project · Coming Soon</div>
-                <h3>Best Price <span class="g">PC Parts.</span></h3>
-                <div class="bppcp-tagline">Shop by spec, not by guessing — live Australian prices.</div>
-                <p>A price-comparison engine for Australian PC builders that actually understands the part. Filter by the specs that matter, compare live prices across every major retailer, and land on the cheapest option without twelve tabs open. It's the newest thing we're building.</p>
-                <div class="bppcp-chips">
-                    <span class="bppcp-chip">Live AU Prices</span>
-                    <span class="bppcp-chip">Search By Spec</span>
-                    <span class="bppcp-chip">Every Major Retailer</span>
-                </div>
-            </div>
-            <div class="bppcp-actions">
-                <a class="bppcp-explore" href="pcparts.html">Explore The Project →</a>
-                <a class="bppcp-note-link" href="pcparts.html#notify">Get the launch email →</a>
-            </div>
-        </article>
-
-        <div class="section-eyebrow">// IN BUILD</div>
-        <h2 class="section-title">Two Apps. <span class="gtext-gold">Opposite Tactics.</span></h2>
-        <p class="section-subtitle"><strong>Quantum Button</strong> is fast, loud, and best played across a kitchen table from someone you can taunt. <strong>Achievo</strong> is the slow burn — daily quests, real streaks, and a feed you're meant to close. Both come out of the same studio. Same obsession, opposite methods.</p>
+        <div class="section-eyebrow">// THE FLAGSHIP</div>
+        <h2 class="section-title">Meet <span class="gtext">Quantum Button.</span></h2>
+        <p class="section-subtitle">The most addictive sixty seconds on your phone. Here's what lands when it drops this week.</p>
 
         <div class="project-stack">
 
             <!-- QUANTUM -->
             <article class="project-card">
                 <div class="project-info">
-                    <span class="project-status status-beta"><span class="dot"></span>Closed Beta • v2.0</span>
+                    <span class="project-status status-beta"><span class="dot"></span>Launching This Week • v2.0</span>
                     <h3>QUANTUM BUTTON</h3>
                     <div class="project-tagline">A one-button duel, face to face.</div>
                     <p class="project-desc">
@@ -581,42 +566,38 @@
                         <div class="feature-row"><span class="check">✓</span>Thirteen squad avatars — pick the one that fits your match face</div>
                     </div>
                     <div class="project-actions">
-                        <a href="quantum.html" class="btn-view">See The Latest Build →</a>
-                        <a href="waitlistq.html?from=home" class="btn-ghost">Join Waitlist →</a>
+                        <a href="quantum.html" class="btn-view">How It Plays →</a>
+                        <a href="waitlistq.html?from=home" class="btn-ghost">Get The Launch Link →</a>
                     </div>
                 </div>
                 <div class="project-visual">
-                    <img src="quantum-logo.jpg" alt="Quantum Button" loading="lazy">
+                    <img src="screenshot2.png" alt="Quantum Button gameplay" loading="lazy" style="aspect-ratio:auto;width:auto;max-height:380px;object-fit:contain;clip-path:none;-webkit-clip-path:none;border-radius:16px">
                 </div>
             </article>
 
-            <!-- ACHIEVO -->
-            <article class="project-card card-achievo">
-                <div class="project-info">
-                    <span class="project-status status-soon"><span class="dot"></span>In Build • v1.0 Late 2027</span>
-                    <h3>ACHIEVO</h3>
-                    <div class="project-tagline">A social app that wants you to log off.</div>
-                    <p class="project-desc">
-                        Vertical video on one side. Threaded conversations on the other. Set the quests that matter — drink water, run five kilometres, finish the book — and the app turns each one into XP, streaks, and a small circle of people who notice when you turn up. <strong>Built accessibility-first from the first sketch</strong>: designed for wheelchair users, neurodivergent minds, low vision and Deaf players, and anyone the internet routinely forgets.
-                    </p>
-                    <div class="feature-list">
-                        <div class="feature-row"><span class="check">✓</span>A dual feed: video to inspire you, threads to talk it over</div>
-                        <div class="feature-row"><span class="check">✓</span>Daily quests for runs, hydration, focus, journaling, the lot</div>
-                        <div class="feature-row"><span class="check">✓</span>Streaks that pause when life happens, instead of punishing rest</div>
-                        <div class="feature-row"><span class="check">✓</span>Camera-proof posts with built-in timers — the receipts are real</div>
-                        <div class="feature-row"><span class="check">✓</span>Accessibility designed first, not bolted on at the end</div>
-                        <div class="feature-row"><span class="check">✓</span>Free with ads, or <strong style="color:var(--neon-gold)">Achievo Pro ★</strong> for an ad-free feed and a gold badge by your name</div>
-                    </div>
-                    <div class="project-actions">
-                        <a href="achievo.html" class="btn-view btn-purple">Join The Movement →</a>
-                        <a href="waitlist.html?from=home" class="btn-ghost">Get Early Access →</a>
-                    </div>
-                </div>
-                <div class="project-visual">
-                    <img src="achievologo.jpg" alt="Achievo" loading="lazy" style="border-radius:30%">
-                </div>
-            </article>
+        </div>
 
+        <!-- ALSO FROM THE STUDIO -->
+        <div class="also-strip">
+            <div class="also-eyebrow">// ALSO FROM THE STUDIO</div>
+            <div class="also-grid">
+                <a class="also-card" href="achievo.html">
+                    <img src="achievologo.jpg" class="also-logo" alt="Achievo" loading="lazy">
+                    <div class="also-text">
+                        <div class="also-name">Achievo</div>
+                        <div class="also-desc">A social app that wants you to log off. In build for late 2027.</div>
+                    </div>
+                    <span class="also-arrow">→</span>
+                </a>
+                <a class="also-card" href="pcparts.html">
+                    <span class="also-tile">🖥️</span>
+                    <div class="also-text">
+                        <div class="also-name">Best Price PC Parts</div>
+                        <div class="also-desc">Australian PC-parts price comparison. Coming Q4 2026.</div>
+                    </div>
+                    <span class="also-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -796,12 +777,11 @@
     <!-- ===================== FINAL CTA ===================== -->
     <div class="final-cta">
         <div class="final-cta-inner">
-            <div class="section-eyebrow">// JOIN EARLY</div>
-            <h2>Be First <span class="gtext">In Line.</span></h2>
-            <p>Sign up for either waitlist below. Beta invites go out in the order you joined — so the earlier you put your name down, the louder your voice is in shaping v1.0.</p>
+            <div class="section-eyebrow">// LAUNCHING THIS WEEK</div>
+            <h2>Be There <span class="gtext">Day One.</span></h2>
+            <p>Quantum Button drops this week. Leave your email and we'll send you the link the moment it's live — before it's anywhere else.</p>
             <div class="hero-ctas">
-                <a href="waitlistq.html?from=home" class="btn-primary">QUANTUM WAITLIST →</a>
-                <a href="waitlist.html?from=home" class="btn-secondary">ACHIEVO WAITLIST →</a>
+                <a href="waitlistq.html?from=home" class="btn-primary">GET THE LAUNCH LINK →</a>
             </div>
         </div>
     </div>
