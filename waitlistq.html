@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-4011788677979740">
     <title>Join The Quantum Button Waitlist • Spencer The Gathering</title>
-    <meta name="description" content="Be first into the Quantum Button closed beta. Private 1v1 PvP with live video. Power items. Daily crates. Mythic skins.">
+    <meta name="description" content="Get the Quantum Button launch link the moment it's live — play in your browser or on Android. Private 1v1 duels with live video, power items and daily crates.">
     <meta name="theme-color" content="#05081a">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -105,9 +105,9 @@
 
     <main>
         <div class="wrap">
-            <div class="eyebrow"><span class="pulse"></span>Quantum Button • Closed Beta</div>
-            <h1>Be On The Board <span class="gtext">Before Launch.</span></h1>
-            <p class="lede">Beta invites go out in the order you joined. The earlier your name lands on the list, the earlier you're tapping — and the earlier you're climbing the global leaderboard. <strong>Free, no spam, unsubscribe any time.</strong></p>
+            <div class="eyebrow"><span class="pulse"></span>Quantum Button • Launching This Week</div>
+            <h1>Get The <span class="gtext">Launch Link.</span></h1>
+            <p class="lede">Quantum Button goes live this week — play right in your browser or on Android. Leave your email and we'll send you the direct link the moment it's live, so you're on the global leaderboard before most people have heard of it. <strong>Free, no spam, unsubscribe any time.</strong></p>
 
             <form class="wl-form" data-source="quantum" novalidate>
                 <label for="name">Your name</label>
@@ -123,12 +123,12 @@
                 <button type="submit">Sign Me Up</button>
             </form>
 
-            <p id="success" class="success">✅ You're on the list. We'll be in touch when beta invites go out.</p>
+            <p id="success" class="success">✅ You're on the list. We'll send you the link the moment it's live.</p>
 
             <div class="perks">
                 <div class="perks-title">// What waitlisters get</div>
                 <div class="perks-list">
-                    <div class="perk"><span class="tick">▸</span>First access to the closed beta</div>
+                    <div class="perk"><span class="tick">▸</span>The launch link the moment it goes live</div>
                     <div class="perk"><span class="tick">▸</span>An exclusive launch mythic skin</div>
                     <div class="perk"><span class="tick">▸</span>A bonus pack of starter power items</div>
                     <div class="perk"><span class="tick">▸</span>Dev-log emails when something ships</div>
@@ -217,7 +217,7 @@
             .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
             .then(function(res){
                 if(res && res.ok){
-                    msg("You're on the list. We'll be in touch when beta invites go out.", 'ok');
+                    msg("You're on the list. We'll send you the link the moment it's live.", 'ok');
                     form.reset();
                 } else {
                     msg((res && res.error) || 'Something went wrong. Please email us directly.', 'err');
