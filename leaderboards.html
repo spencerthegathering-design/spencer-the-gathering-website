@@ -158,7 +158,7 @@
     <section class="section">
         <div class="lb-tabs" id="lbTabs"></div>
         <div class="board">
-            <div class="board-row head"><span>Rank</span><span>Player</span><span class="th-score">Score</span></div>
+            <div class="board-row head"><span>Rank</span><span>Player</span><span class="th-score" id="thScore">Score</span></div>
             <div id="lbBody"></div>
             <div class="lb-status" id="lbStatus"><span class="spin"></span><br>Loading the board…</div>
         </div>
@@ -213,42 +213,51 @@
      ============================================================ -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, query, orderBy, limit, where, getDocs }
+import { getFirestore, collection, query, orderBy, limit, getDocs }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-/* ========== 1. PASTE YOUR QUANTUM BUTTON FIREBASE WEB CONFIG HERE ==========
-   Firebase console → Project settings → General → Your apps → SDK setup & config → "Config".
-   Leave blank to keep the page in "launches soon" mode.                       */
+/* ========== 1. QUANTUM BUTTON FIREBASE WEB CONFIG ==========
+   Pulled straight from the game's own config (js/config.js). Firebase web
+   configs are PUBLIC by design — they identify the project, they don't grant
+   access; access is governed by the Firestore security rules. Safe to ship. */
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyBtexj61W41khgdyeIqLp72r586yGpDmc4",
+  authDomain: "auth.spencer-the-gathering.com",
+  projectId: "quantum-button",
+  storageBucket: "quantum-button.firebasestorage.app",
+  messagingSenderId: "54098163538",
+  appId: "1:54098163538:web:bd4544537e4b4beffe6c8b",
+  measurementId: "G-51E779DFBX"
 };
 
 /* ========== 2. THE LIVE-BOARD CATEGORIES (tabs) ==========
-   Set each tab to match your Firestore. If every mode lives in ONE collection
-   with a "mode" field, use `filter`. If each mode has its OWN collection, put
-   the collection name and leave filter null. Adjust nameField/scoreField to
-   your actual document field names.                                          */
+   Wired to the game's real Firestore layout: each mode is its OWN collection
+   (docs keyed by uid, one best-score per player). "Overall" = the master board
+   of everyone's single best score. "VS" is a separate 1v1 board that ranks by
+   accumulated monthly points, not a single score.
+     • solo/mode docs:  { name, score, streak, mode, photo, date, isPro, country, flagged }
+     • VS monthly docs: { uid, name, points, wins, losses, winRate, isPro, country, lastUpdated }
+   `metric` is just the column label shown for that tab.                       */
+const NAME_FIELD = "name";
 const CATEGORIES = [
-  { label: "Overall",  collection: "leaderboard", nameField: "name", scoreField: "score", filter: null },
-  { label: "VS",       collection: "leaderboard", nameField: "name", scoreField: "score", filter: { field: "mode", value: "vs" } },
-  { label: "Classic",  collection: "leaderboard", nameField: "name", scoreField: "score", filter: { field: "mode", value: "classic" } },
-  { label: "Hardcore", collection: "leaderboard", nameField: "name", scoreField: "score", filter: { field: "mode", value: "hardcore" } },
-  { label: "Zen",      collection: "leaderboard", nameField: "name", scoreField: "score", filter: { field: "mode", value: "zen" } },
-  { label: "Marathon", collection: "leaderboard", nameField: "name", scoreField: "score", filter: { field: "mode", value: "marathon" } },
-  { label: "Devil",    collection: "leaderboard", nameField: "name", scoreField: "score", filter: { field: "mode", value: "devil" } }
+  { label: "Overall",  collection: "leaderboard_master",     scoreField: "score",  metric: "Best Score" },
+  { label: "VS 1v1",   collection: "vs_leaderboard_monthly", scoreField: "points", metric: "VS Points" },
+  { label: "Classic",  collection: "leaderboard_classic",    scoreField: "score",  metric: "Score" },
+  { label: "Hardcore", collection: "leaderboard_hardcore",   scoreField: "score",  metric: "Score" },
+  { label: "Zen",      collection: "leaderboard_zen",        scoreField: "score",  metric: "Score" },
+  { label: "Marathon", collection: "leaderboard_marathon",   scoreField: "score",  metric: "Score" },
+  { label: "Devil",    collection: "leaderboard_devil",      scoreField: "score",  metric: "Score" }
 ];
 
 /* ========== 3. THE LEGENDS (HALL OF FAME) COLLECTION ==========
-   The monthly-champion snapshots. Each doc = one champion for one month +
-   category. Adjust the field names to match what the monthly snapshot writes. */
+   Monthly-champion snapshots. This collection does NOT exist in the game yet —
+   it's written by a month-end job (see the guide). Each doc = one champion for
+   one category in one month. The website reads these exact fields:
+     { month: "2026-07", category: "Overall", winner: "PlayerName", score: 12345 }
+   `month` sorts newest-first as a string, so keep the "YYYY-MM" format.        */
 const LEGENDS = { collection: "legends", monthField: "month", categoryField: "category", nameField: "winner", scoreField: "score" };
 
-const TOP_N = 50;         // rows shown on the live board
+const TOP_N = 50;          // rows shown on the live board
 const LEGENDS_MONTHS = 12; // how many months of legends to show
 
 /* ============ nothing below here needs editing ============ */
@@ -274,15 +283,21 @@ function lbStatus(html, cls){ const s=$("lbStatus"); if(!s)return; s.className='
 
 async function loadCategory(cat){
   renderRows([]);
+  const th = $("thScore"); if(th) th.textContent = cat.metric || 'Score';
   if(!db){ lbStatus('<span class="big">The board powers up at launch.</span>The live leaderboard goes here the moment Quantum Button drops. Come back and watch it fill.'); return; }
   lbStatus('<span class="spin"></span><br>Loading the board…');
   try{
-    const cons = [];
-    if(cat.filter) cons.push(where(cat.filter.field, "==", cat.filter.value));
-    cons.push(orderBy(cat.scoreField, "desc"));
-    cons.push(limit(TOP_N));
-    const snap = await getDocs(query(collection(db, cat.collection), ...cons));
-    const rows = snap.docs.map(d => ({ name: d.get(cat.nameField), score: d.get(cat.scoreField) }));
+    // Fetch a few extra so hidden (cheat-flagged) rows don't shrink the board.
+    const snap = await getDocs(query(
+      collection(db, cat.collection),
+      orderBy(cat.scoreField, "desc"),
+      limit(TOP_N + 10)
+    ));
+    const rows = snap.docs
+      .filter(d => d.get('flagged') !== true)           // drop anti-cheat flagged scores
+      .map(d => ({ name: d.get(NAME_FIELD), score: d.get(cat.scoreField) }))
+      .filter(r => typeof r.score === 'number')          // skip malformed docs
+      .slice(0, TOP_N);
     if(!rows.length){ lbStatus('<span class="big">No scores on the board yet.</span>Be the first name up here.'); return; }
     lbStatus('');
     renderRows(rows);
