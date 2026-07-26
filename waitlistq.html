@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-4011788677979740">
-    <title>Join The Quantum Button Waitlist • Spencer The Gathering</title>
-    <meta name="description" content="Get the Quantum Button launch link the moment it's live — play in your browser or on Android. Private 1v1 duels with live video, power items and daily crates.">
+    <title>Quantum Button Is Live — Play Free • Spencer The Gathering</title>
+    <meta name="description" content="Quantum Button is live — play it free right in your browser. Private 1v1 duels with live video, power items and daily crates. Android coming to Google Play next.">
     <meta name="theme-color" content="#05081a">
+    <meta http-equiv="refresh" content="3; url=https://quantumbutton.spencer-the-gathering.com">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -64,6 +65,9 @@
         .success.err{background:rgba(255,80,80,.08);border-color:rgba(255,80,80,.35);color:#ff9090}
         .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
         button[type=submit]:disabled{opacity:.5}
+        .play-btn{display:inline-block;margin-top:.4rem;padding:1.15rem 2.4rem;background:linear-gradient(135deg,var(--neon-blue),var(--neon-pink));color:#000;font-weight:900;font-family:'Orbitron',sans-serif;font-size:.9rem;letter-spacing:3px;border-radius:100px;text-transform:uppercase;text-decoration:none;box-shadow:0 0 30px rgba(0,243,255,.2);transition:all .3s cubic-bezier(.4,0,.2,1);position:relative}
+        .play-btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 50px rgba(0,243,255,.4),0 0 80px rgba(255,0,153,.15)}
+        .redirect-note{margin-top:1.1rem;font-size:.72rem;color:var(--text-dim);letter-spacing:1px;position:relative}
 
         .perks{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);position:relative}
         .perks-title{font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
@@ -105,33 +109,20 @@
 
     <main>
         <div class="wrap">
-            <div class="eyebrow"><span class="pulse"></span>Quantum Button • Launching This Week</div>
-            <h1>Get The <span class="gtext">Launch Link.</span></h1>
-            <p class="lede">Quantum Button goes live this week — play right in your browser or on Android. Leave your email and we'll send you the direct link the moment it's live, so you're on the global leaderboard before most people have heard of it. <strong>Free, no spam, unsubscribe any time.</strong></p>
+            <div class="eyebrow"><span class="pulse"></span>Quantum Button • Now Live</div>
+            <h1>It's <span class="gtext">Live.</span></h1>
+            <p class="lede">Quantum Button is out — play it right now, free, straight in your browser. No download, no signup. <strong>Android is coming to Google Play next.</strong></p>
 
-            <form class="wl-form" data-source="quantum" novalidate>
-                <label for="name">Your name</label>
-                <input id="name" type="text" name="Name" placeholder="What should we call you?" required autocomplete="name">
-
-                <label for="email">Email address</label>
-                <input id="email" type="email" name="Email" placeholder="you@example.com" required autocomplete="email">
-
-                <label for="msg">Anything you want to add? <span style="opacity:.5;text-transform:none;letter-spacing:0">(optional)</span></label>
-                <textarea id="msg" name="Message" rows="3" placeholder="Why you're interested, what you'd want from a tap fighter, anything."></textarea>
-
-                <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <button type="submit">Sign Me Up</button>
-            </form>
-
-            <p id="success" class="success">✅ You're on the list. We'll send you the link the moment it's live.</p>
+            <a href="https://quantumbutton.spencer-the-gathering.com" class="play-btn">Play Free Now →</a>
+            <p class="redirect-note">Taking you to the game…</p>
 
             <div class="perks">
-                <div class="perks-title">// What waitlisters get</div>
+                <div class="perks-title">// What's waiting</div>
                 <div class="perks-list">
-                    <div class="perk"><span class="tick">▸</span>The launch link the moment it goes live</div>
-                    <div class="perk"><span class="tick">▸</span>An exclusive launch mythic skin</div>
-                    <div class="perk"><span class="tick">▸</span>A bonus pack of starter power items</div>
-                    <div class="perk"><span class="tick">▸</span>Dev-log emails when something ships</div>
+                    <div class="perk"><span class="tick">▸</span>1v1 live-video duels</div>
+                    <div class="perk"><span class="tick">▸</span>Five wild solo modes</div>
+                    <div class="perk"><span class="tick">▸</span>A free daily wheel &amp; crates</div>
+                    <div class="perk"><span class="tick">▸</span>Global leaderboards</div>
                 </div>
             </div>
         </div>
@@ -181,51 +172,6 @@
 
         back.href = target;
         back.textContent = label;
-    })();
-
-    // Waitlist capture — posts to the /api/notify Pages Function
-    (function(){
-        var form = document.querySelector('.wl-form');
-        if(!form) return;
-        var box = document.getElementById('success');
-        function msg(text, state){
-            if(!box) return;
-            box.textContent = text;
-            box.className = 'success ' + state;
-            box.style.display = 'block';
-        }
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            var hp = form.querySelector('.hp');
-            if(hp && hp.value) return;
-            var nameEl = form.querySelector('input[name=Name]');
-            var emailEl = form.querySelector('input[name=Email]');
-            var msgEl = form.querySelector('textarea[name=Message]');
-            var name = (nameEl && nameEl.value || '').trim();
-            var email = (emailEl && emailEl.value || '').trim();
-            var message = (msgEl && msgEl.value || '').trim();
-            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ msg('Please enter a valid email address.', 'err'); return; }
-            var btn = form.querySelector('button[type=submit]');
-            var source = form.getAttribute('data-source') || 'waitlist';
-            if(btn) btn.disabled = true;
-            msg('Sending…', 'pending');
-            fetch('/api/notify', {
-                method: 'POST',
-                headers: { 'content-type': 'application/json' },
-                body: JSON.stringify({ name: name, email: email, message: message, source: source })
-            })
-            .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
-            .then(function(res){
-                if(res && res.ok){
-                    msg("You're on the list. We'll send you the link the moment it's live.", 'ok');
-                    form.reset();
-                } else {
-                    msg((res && res.error) || 'Something went wrong. Please email us directly.', 'err');
-                }
-            })
-            .catch(function(){ msg('Network error — please try again, or email us directly.', 'err'); })
-            .finally(function(){ if(btn) btn.disabled = false; });
-        });
     })();
 </script>
 </body>
